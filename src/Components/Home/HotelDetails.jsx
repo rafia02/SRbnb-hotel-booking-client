@@ -51,10 +51,11 @@ const HotelDetails = () => {
 
 
     const dif = calculateDateDifference()
-    const totalTaxBefore = (Math.floor(price) * dif)
+    const amount = (Math.floor(price) * dif)
     console.log("a", 5/100)
-    const cleaningFee = Math.floor(totalTaxBefore * (7 / 100))
-    const srbnbFee = Math.floor(totalTaxBefore * (15 / 100))
+    const cleaningFee = Math.floor(amount * (7 / 100))
+    const srbnbFee = Math.floor(amount * (15 / 100))
+    const totalBeforeTax =  amount + cleaningFee + srbnbFee
     
     const handleBookingSubmit = (e) => {
         e.preventDefault();
@@ -223,7 +224,7 @@ const HotelDetails = () => {
 
 
                 <div className='w-4/12 mt-10  ml-10 '>
-                    <div className='shadow-2xl bg-rose-50 sticky py-10 top-52 px-5 rounded-lg'>
+                    <div className='shadow-2xl bg-gray-50 sticky py-10 top-52 px-5 rounded-lg'>
                         <div className='text-lg flex justify-between mb-5 w-full'>
                             <div>
                                 <span className='font-bold text-xl'>${price}</span> <span>night</span>
@@ -324,7 +325,7 @@ const HotelDetails = () => {
                                 <div>
                                     <div className='flex justify-between mb-3'>
                                         <p>${price} x {dif} night</p>
-                                        <p>${totalTaxBefore}</p>
+                                        <p>${amount}</p>
                                     </div>
                                     <div className='flex justify-between mb-3'>
                                         <p>Cleaning Free</p>
@@ -333,6 +334,11 @@ const HotelDetails = () => {
                                     <div className='flex justify-between'>
                                         <p>SRbnb service Free</p>
                                         <p>${srbnbFee}</p>
+                                    </div>
+                                    <hr className=' my-6 ' />
+                                    <div className='flex font-semibold text-lg justify-between'>
+                                        <p>Total before taxes</p>
+                                        <p>${totalBeforeTax}</p>
                                     </div>
                                 </div>
                             </div>
