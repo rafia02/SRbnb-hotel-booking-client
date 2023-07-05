@@ -38,15 +38,6 @@ const HotelDetails = () => {
 
     };
 
-    const handleBookingSubmit = (e) => {
-        e.preventDefault();
-
-        if (checkInDate && checkOutDate) {
-            // Handle the booking submission, e.g., make an API call, perform validation, etc.
-            console.log('Check-in Date:', checkInDate);
-            console.log('Check-out Date:', checkOutDate);
-        }
-    };
 
 
     const calculateDateDifference = () => {
@@ -60,7 +51,22 @@ const HotelDetails = () => {
 
 
     const dif = calculateDateDifference()
-    console.log(dif)
+    const totalTaxBefore = (Math.floor(price) * dif)
+    console.log("a", 5/100)
+    const cleaningFee = Math.floor(totalTaxBefore * (7 / 100))
+    const srbnbFee = Math.floor(totalTaxBefore * (15 / 100))
+    
+    const handleBookingSubmit = (e) => {
+        e.preventDefault();
+
+        if (checkInDate && checkOutDate) {
+            // Handle the booking submission, e.g., make an API call, perform validation, etc.
+            console.log('Check-in Date:', checkInDate);
+            console.log('Check-out Date:', checkOutDate);
+
+          
+        }
+    };
 
 
 
@@ -216,8 +222,8 @@ const HotelDetails = () => {
 
 
 
-                <div className='w-4/12 mt-10  ml-12 '>
-                    <div className='shadow-2xl bg-gray-100 sticky py-10 top-52 p-5 rounded-lg'>
+                <div className='w-4/12 mt-10  ml-10 '>
+                    <div className='shadow-2xl bg-rose-50 sticky py-10 top-52 px-5 rounded-lg'>
                         <div className='text-lg flex justify-between mb-5 w-full'>
                             <div>
                                 <span className='font-bold text-xl'>${price}</span> <span>night</span>
@@ -267,7 +273,7 @@ const HotelDetails = () => {
 
                                     </div>
 
-                                    <div className="flex justify-between w-full mt-5">
+                                    <div className="flex justify-between w-full mt-3">
                                         <div>
                                             <label htmlFor="adults" className="block text-sm font-medium text-gray-700">
                                                 Adults
@@ -314,11 +320,19 @@ const HotelDetails = () => {
                                     </button>
                                 </form>
 
-                                <p className='text-center mt-4'>You won't be charged yet</p>
+                                <p className='text-center mt-4 mb-9'>You won't be charged yet</p>
                                 <div>
-                                    <div>
-                                        <p>Number of nights: {calculateDateDifference()}</p>
-                                        <p> total</p>
+                                    <div className='flex justify-between mb-3'>
+                                        <p>${price} x {dif} night</p>
+                                        <p>${totalTaxBefore}</p>
+                                    </div>
+                                    <div className='flex justify-between mb-3'>
+                                        <p>Cleaning Free</p>
+                                        <p>${cleaningFee}</p>
+                                    </div>
+                                    <div className='flex justify-between'>
+                                        <p>SRbnb service Free</p>
+                                        <p>${srbnbFee}</p>
                                     </div>
                                 </div>
                             </div>
