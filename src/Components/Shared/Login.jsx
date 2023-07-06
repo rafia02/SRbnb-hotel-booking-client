@@ -1,9 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
     return (
-        <div className="my-10">
-            <div className="shadow-lg w-11/12 bg-gray-100  md:w-1/3  mx-auto bg-white p-8 shadow-md rounded-md">
+        <div className="min-h-screen flex items-center justify-center ">
+            <div className="bg-white p-8 border rounded shadow-md max-w-md w-full">
                 <h2 className="text-2xl text-center font-semibold mb-4">Login</h2>
                 <form>
                     <div className="mb-4">
@@ -18,9 +19,10 @@ const Login = () => {
                         <button type="submit" className=" text-white font-bold px-4 py-2 ">Login</button>
                     </div>
                 </form>
-                <div className='text-center my-5 w-full rounded-lg  hover:text-white outline bg-white hover:bg-rose-600 duration-500 '>
+                <div className='text-center mt-5 mb-3 w-full rounded-lg  hover:text-white outline bg-white hover:bg-rose-600 duration-500 '>
                     <button type="submit" className=" font-bold px-4 py-2 ">Continue with google</button>
                 </div>
+                <p>Don't have an account? Please <Link to="/signup" className='text-rose-700 font-bold'>Sing up</Link></p>
             </div>
         </div>
     );
