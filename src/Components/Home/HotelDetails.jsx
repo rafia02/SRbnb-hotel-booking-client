@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import { BsPeople, BsSignNoParking } from "react-icons/bs";
 import { LiaBedSolid } from "react-icons/lia";
 import { PiHouseLineBold, PiCoatHanger, PiTelevisionSimpleLight } from "react-icons/pi";
@@ -39,6 +39,15 @@ const HotelDetails = () => {
     };
 
 
+    const handleAdultsChange = (e) => {
+        setAdults(parseInt(e.target.value, 10));
+    };
+
+    const handleChildrenChange = (e) => {
+        setChildren(parseInt(e.target.value, 10));
+    };
+
+
 
     const calculateDateDifference = () => {
         if (checkInDate && checkOutDate) {
@@ -53,9 +62,11 @@ const HotelDetails = () => {
     const dif = calculateDateDifference()
     const amount = (Math.floor(price) * dif)
     console.log("a", 5/100)
-    const cleaningFee = Math.floor(amount * (7 / 100))
-    const srbnbFee = Math.floor(amount * (15 / 100))
+    const cleaningFee = Math.floor(amount * (5 / 100))
+    const srbnbFee = Math.floor(amount * (10 / 100))
     const totalBeforeTax =  amount + cleaningFee + srbnbFee
+
+    
     
     const handleBookingSubmit = (e) => {
         e.preventDefault();
@@ -72,13 +83,7 @@ const HotelDetails = () => {
 
 
 
-    const handleAdultsChange = (e) => {
-        setAdults(parseInt(e.target.value, 10));
-    };
-
-    const handleChildrenChange = (e) => {
-        setChildren(parseInt(e.target.value, 10));
-    };
+ 
 
 
     return (
@@ -116,27 +121,27 @@ const HotelDetails = () => {
             </div>
 
 
-            <div className='flex gap-5'>
+            <div className='flex  flex-col md:flex-row gap-3'>
 
-                <div className='w-8/12 gap-5'>
-                    <div className='flex flex-col md:flex-row gap-5 mt-10'>
+                <div className='w-full md:w-8/12 gap-5'>
+                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mt-10'>
 
-                        <div className='flex items-center rounded-xl font-bold font-mono text-xl p-5 border'>
+                        <div className='flex items-center rounded-xl font-bold font-mono text-lg p-3 border'>
                             <BsPeople className='mr-4 text-2xl'></BsPeople>
                             <h5>{room.guest} Guests</h5>
                         </div>
 
-                        <div className='flex items-center rounded-xl font-bold font-mono text-xl p-5 border'>
+                        <div className='flex items-center rounded-xl font-bold font-mono text-lg p-3 border'>
                             <PiHouseLineBold className='mr-4 text-2xl'></PiHouseLineBold>
                             <h5>{room.bedroom} Bedrooms</h5>
                         </div>
 
-                        <div className='flex items-center rounded-xl font-bold font-mono text-xl p-5 border'>
+                        <div className='flex items-center rounded-xl font-bold font-mono text-lg p-3 border'>
                             <LiaBedSolid className='mr-4 text-2xl'></LiaBedSolid>
                             <h5>{room.bed} Beds</h5>
                         </div>
 
-                        <div className='flex items-center rounded-xl font-bold font-mono text-xl p-5 border'>
+                        <div className='flex items-center rounded-xl font-bold font-mono text-lg p-3 border'>
                             <MdOutlineBathroom className='mr-4 text-2xl'></MdOutlineBathroom>
                             <h5>{room.bath} Baths</h5>
                         </div>
@@ -223,8 +228,8 @@ const HotelDetails = () => {
 
 
 
-                <div className='w-4/12 mt-10  ml-10 '>
-                    <div className='shadow-2xl bg-gray-50 sticky py-10 top-52 px-5 rounded-lg'>
+                <div className='w-full md:w-4/12 mt-10  md:ml-10 '>
+                    <div className='shadow-2xl bg-gray-50 sticky py-10 top-48 bottom-52 px-5 rounded-lg'>
                         <div className='text-lg flex justify-between mb-5 w-full'>
                             <div>
                                 <span className='font-bold text-xl'>${price}</span> <span>night</span>
@@ -265,7 +270,7 @@ const HotelDetails = () => {
                                             </label>
                                             <DatePicker
                                                 id="checkOutDate"
-                                                minDate={new Date()}
+                                                minDate={checkInDate}
                                                 selected={checkOutDate}
                                                 onChange={handleCheckOutDateChange}
                                                 className="w-full p-2 border border-gray-300 rounded-md"
@@ -280,12 +285,14 @@ const HotelDetails = () => {
                                                 Adults
                                             </label>
                                             <div className="mt-1 relative rounded-md shadow-sm">
+
+                                            
                                                 <input
                                                     type="number"
                                                     name="adults"
                                                     id="adults"
                                                     min="1"
-                                                    max="10"
+                                                    max={room.guest - children}
                                                     value={adults}
                                                     onChange={handleAdultsChange}
                                                     className="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-3 pr-10 py-2 sm:text-sm border-gray-300 rounded-md"
@@ -298,7 +305,19 @@ const HotelDetails = () => {
                                                 Children
                                             </label>
                                             <div className="mt-1 relative rounded-md shadow-sm">
-                                                <input
+                                                
+
+                                            <input
+                                                    type="number"
+                                                    name="children"
+                                                    id="children"
+                                                    min="0"
+                                                    max={room.guest - adults}
+                                                    value={children}
+                                                    onChange={handleChildrenChange}
+                                                    className="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-3 pr-10 py-2 sm:text-sm border-gray-300 rounded-md"
+                                                />
+                                                {/* <input
                                                     type="number"
                                                     name="children"
                                                     id="children"
@@ -307,18 +326,18 @@ const HotelDetails = () => {
                                                     value={children}
                                                     onChange={handleChildrenChange}
                                                     className="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-3 pr-10 py-2 sm:text-sm border-gray-300 rounded-md"
-                                                />
+                                                /> */}
                                             </div>
                                         </div>
                                     </div>
 
 
-                                    <button
+                                    <Link to="/hotel/confirmed"
                                         type="submit"
                                         className="mt-4 px-4 py-2 w-full outline-none text-white font-bold bg-rose-600  rounded-md hover:bg-rose-700"
                                     >
                                         Book Now
-                                    </button>
+                                    </Link>
                                 </form>
 
                                 <p className='text-center mt-4 mb-9'>You won't be charged yet</p>
