@@ -317,16 +317,7 @@ const HotelDetails = () => {
                                                     onChange={handleChildrenChange}
                                                     className="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-3 pr-10 py-2 sm:text-sm border-gray-300 rounded-md"
                                                 />
-                                                {/* <input
-                                                    type="number"
-                                                    name="children"
-                                                    id="children"
-                                                    min="0"
-                                                    max="10"
-                                                    value={children}
-                                                    onChange={handleChildrenChange}
-                                                    className="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-3 pr-10 py-2 sm:text-sm border-gray-300 rounded-md"
-                                                /> */}
+                                                
                                             </div>
                                         </div>
                                     </div>
