@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
+import { context } from '../../Context/AuthContex';
 import logo from '../../images/logo2.png'
 
 const Navber = () => {
+    const {user, logout} = useContext(context)
+
+const handleLogout =()=>{
+    logout()
+    .then(()=>{})
+    .catch(e => console.error(e) )
+}
+
 
 
     const manueBar = <>
@@ -42,8 +52,19 @@ const Navber = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <Link to="/login" className='px-1 mr-2 font-bold text-md'>LOGIN</Link>
 
+                {
+                    user?.email ?
+                    <button onClick={handleLogout} className='px-1 mr-2 font-bold text-md'>Log Out</button>
+                    :
+
+                    <Link to="/login" className='px-1 mr-2 font-bold text-md'>LOGIN</Link>
+                    
+
+                }
+
+
+                
             </div>
         </div>
         );
