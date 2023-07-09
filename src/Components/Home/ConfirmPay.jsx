@@ -95,11 +95,13 @@ const ConfirmPay = () => {
                             <input className="border-2 w-full p-3 rounded-md" type="text" placeholder='State' />
                             <input className="border-2 w-full p-3 rounded-md" type="text" placeholder='Zip code' />
                         </div>
-                        <PhoneInput
-                            country={'auto'}
-                            value={phone}
-                            onChange={handlePhoneChange}
-                        />
+                        <div>
+                            <PhoneInput
+                                country={'auto'}
+                                value={phone}
+                                onChange={handlePhoneChange}
+                            />
+                        </div>
                     </div>
                 </div>
             </div>
