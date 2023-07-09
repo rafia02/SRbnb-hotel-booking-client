@@ -13,16 +13,16 @@ const SignUp = () => {
         console.log('Form submitted:', data);
 
         signup(data.email, data.password)
-        .then(res => {
-            console.log(res.user)
-            toast.success("Successly sign up")
-            profileupdate({displayName: data.name})
-            .then(()=>{})
+            .then(res => {
+                console.log(res.user)
+                toast.success("Successly sign up")
+                profileupdate({ displayName: data.name })
+                    .then(() => { })
+                    .catch(e => console.error(e))
+
+            })
             .catch(e => console.error(e))
-         
-        })
-        .catch(e => console.error(e))
-  
+
     };
 
 
@@ -39,7 +39,7 @@ const SignUp = () => {
                             type="text"
                             name="name"
                             placeholder="Name"
-                            {...register("name", {required: true})}
+                            {...register("name", { required: true })}
                             className="mt-1 px-4 py-2 border border-gray-300 rounded-md w-full"
                         />
                     </div>
@@ -65,17 +65,18 @@ const SignUp = () => {
                             type="password"
                             name="password"
                             placeholder="Password"
-                            {...register("password", { required: true,
-                                minLength: {value: 6, message: 'you have must 6 characte'},
-                                pattern: {value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]/, message: 'password must be stong'}
+                            {...register("password", {
+                                required: true,
+                                minLength: { value: 6, message: 'you have must 6 characte' },
+                                pattern: { value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]/, message: 'password must be stong' }
                             })}
                             className="mt-1 px-4 py-2 border border-gray-300 rounded-md w-full"
                         />
-                          {/* {errors.password && <p className='text-red-600'>{errors.password?.message}</p>} */}
-                        
+                        {/* {errors.password && <p className='text-red-600'>{errors.password?.message}</p>} */}
+
                     </div>
 
-                    <input type="submit" value="Sign Up" className=' text-white font-bold px-4 py-2 text-center w-full mb-3 bg-rose-600 rounded-lg  hover:bg-rose-700 duration-500'/>
+                    <input type="submit" value="Sign Up" className=' text-white font-bold px-4 py-2 text-center w-full mb-3 bg-rose-600 rounded-lg  hover:bg-rose-700 duration-500' />
 
                     {/* <div className='text-center w-full mb-3 bg-rose-600 rounded-lg  hover:bg-rose-700 duration-500'>
                         <button type="submit" className=" text-white font-bold px-4 py-2 ">Sign Up</button>

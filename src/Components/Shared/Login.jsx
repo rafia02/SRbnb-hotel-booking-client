@@ -18,8 +18,8 @@ const Login = () => {
         toast.success('Sucessfuly log in')
       })
       .catch(e =>{
-        setErr(e.message)
-        console.error(e)})
+        setErr(e.code.split('auth/'))
+        console.error(e.message)})
     }
 
     return (

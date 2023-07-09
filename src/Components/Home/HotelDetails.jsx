@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link, useLoaderData } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { Link, useLoaderData, useNavigate } from 'react-router-dom';
 import { BsPeople, BsSignNoParking } from "react-icons/bs";
 import { LiaBedSolid } from "react-icons/lia";
 import { PiHouseLineBold, PiCoatHanger, PiTelevisionSimpleLight } from "react-icons/pi";
@@ -14,12 +14,16 @@ import Speciality from './Speciality';
 
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import { context } from '../../Context/AuthContex';
+import toast from 'react-hot-toast';
 
 
 const HotelDetails = () => {
+    const { user } = useContext(context)
     const details = useLoaderData()
-    // console.log(details)
-    const { title, img1, img2, img3, img4, img5, reviews, room, price, description, pleace, distance } = details
+    const navigate = useNavigate()
+
+    const { title, _id, img1, img2, img3, img4, img5, reviews, room, price, description, pleace, distance } = details
 
     const [checkInDate, setCheckInDate] = useState(null);
     const [checkOutDate, setCheckOutDate] = useState(null);
@@ -34,7 +38,7 @@ const HotelDetails = () => {
     };
 
     const handleCheckOutDateChange = (date) => {
-        setCheckOutDate(date) 
+        setCheckOutDate(date)
 
     };
 
@@ -61,13 +65,14 @@ const HotelDetails = () => {
 
     const dif = calculateDateDifference()
     const amount = (Math.floor(price) * dif)
-    console.log("a", 5/100)
     const cleaningFee = Math.floor(amount * (5 / 100))
     const srbnbFee = Math.floor(amount * (10 / 100))
-    const totalBeforeTax =  amount + cleaningFee + srbnbFee
+    const totalBeforeTax = amount + cleaningFee + srbnbFee
+    const tax = Math.floor(totalBeforeTax * (9 / 100))
+    const totalPrice = totalBeforeTax + tax
 
-    
-    
+
+
     const handleBookingSubmit = (e) => {
         e.preventDefault();
 
@@ -75,15 +80,64 @@ const HotelDetails = () => {
             // Handle the booking submission, e.g., make an API call, perform validation, etc.
             console.log('Check-in Date:', checkInDate);
             console.log('Check-out Date:', checkOutDate);
+            handleReserve()
+            navigate('/hotel/confirmed')
 
-          
+
         }
     };
 
 
+    const handleReserve = () => {
+        const dateIn = `${checkInDate.getDate()} - ${checkInDate.getMonth() + 1} - ${checkInDate.getFullYear()}`
+        const dateIN = checkInDate.getDate()
+        const dateOut = `${checkOutDate.getDate()}- ${checkOutDate.getMonth() + 1} - ${checkInDate.getFullYear()}`
+        console.log(dateIn, dateOut)
+        const totalGuest = adults + children
 
 
- 
+        const reserveData = {
+            dateIn,
+            dateOut,
+            totalGuest,
+            night: dif,
+            cleaningFee,
+            amount,
+            price,
+            srbnbFee,
+            tax,
+            totalPrice,
+            email: user.email,
+            status: false,
+            id: _id,
+            title,
+            img1
+
+        }
+
+        // console.log(reserveData)
+
+        fetch("http://localhost:5000/reserve", {
+            method: "POST",
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify(reserveData)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+
+
+            })
+            .catch(e => console.error(e))
+
+
+    }
+
+
+
+
 
 
     return (
@@ -286,7 +340,7 @@ const HotelDetails = () => {
                                             </label>
                                             <div className="mt-1 relative rounded-md shadow-sm">
 
-                                            
+
                                                 <input
                                                     type="number"
                                                     name="adults"
@@ -305,9 +359,9 @@ const HotelDetails = () => {
                                                 Children
                                             </label>
                                             <div className="mt-1 relative rounded-md shadow-sm">
-                                                
 
-                                            <input
+
+                                                <input
                                                     type="number"
                                                     name="children"
                                                     id="children"
@@ -317,18 +371,18 @@ const HotelDetails = () => {
                                                     onChange={handleChildrenChange}
                                                     className="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-3 pr-10 py-2 sm:text-sm border-gray-300 rounded-md"
                                                 />
-                                                
+
                                             </div>
                                         </div>
                                     </div>
 
 
-                                    <Link to="/hotel/confirmed"
+                                    <button
                                         type="submit"
-                                        className="mt-4 px-4 py-2 w-full outline-none text-white font-bold bg-rose-600  rounded-md hover:bg-rose-700"
+                                        className="mt-4 px-4 text-center py-2 w-full outline-none text-white font-bold bg-rose-600  rounded-md hover:bg-rose-700"
                                     >
-                                        Book Now
-                                    </Link>
+                                        Reserve
+                                    </button>
                                 </form>
 
                                 <p className='text-center mt-4 mb-9'>You won't be charged yet</p>
