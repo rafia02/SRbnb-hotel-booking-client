@@ -4,6 +4,7 @@ import { context } from '../../Context/AuthContex';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 import { Link } from 'react-router-dom'
+import toast from 'react-hot-toast';
 
 
 
@@ -67,7 +68,7 @@ const ConfirmPay = () => {
         }
 
 
-        fetch(`http://localhost:5000/payment`, {
+        fetch(`http://localhost:5000/booking`, {
             method: "POST",
             headers: {
                 "Content-type" : "application/json"
@@ -75,7 +76,11 @@ const ConfirmPay = () => {
             body: JSON.stringify(bookData)
         })
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(data => {
+            console.log(data)
+        toast.success("Successfully Booking")
+         form.reset()
+        })
         .catch(e => console.error(e))
 
     }
@@ -156,11 +161,11 @@ const ConfirmPay = () => {
                     <h3 className='text-xl font-bold mb-3' >Pay with</h3>
                     <form onSubmit={handleRequest}>
                         <div>
-                            <input name="street" className="border-stone-800 border-2 w-full p-2 rounded-md mb-1" type="text" placeholder='Street address' />
-                            <input name="city" className="border-2 border-stone-800 w-full p-2 rounded-md" type="text" placeholder='City' />
+                            <input required name="street" className="border-stone-800 border-2 w-full p-2 rounded-md mb-1" type="text" placeholder='Street address' />
+                            <input required name="city" className="border-2 border-stone-800 w-full p-2 rounded-md" type="text" placeholder='City' />
                             <div className='flex gap-1 mt-1 mb-1'>
-                                <input name="state" className="border-stone-800 border-2 w-full p-2 rounded-md" type="text" placeholder='State' />
-                                <input name="gip" className="border-2  border-stone-800 w-full p-2 rounded-md" type="text" placeholder='Zip code' />
+                                <input required name="state" className="border-stone-800 border-2 w-full p-2 rounded-md" type="text" placeholder='State' />
+                                <input required name="gip" className="border-2  border-stone-800 w-full p-2 rounded-md" type="text" placeholder='Zip code' />
                             </div>
 
 
@@ -237,7 +242,7 @@ const ConfirmPay = () => {
 
 
                         <div>
-                            <Link to={`/payment/${id}`} type='submit' className="bg-rose-500 text-lg hover:bg-pink-500 text-white font-bold py-3 px-6 rounded">Request To Book</Link>
+                            <button type='submit' className="bg-rose-500 text-lg hover:bg-pink-500 text-white font-bold py-3 px-6 rounded">Request To Book</button>
                         </div>
 
 
