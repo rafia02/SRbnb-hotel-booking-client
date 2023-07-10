@@ -81,7 +81,7 @@ const HotelDetails = () => {
             console.log('Check-in Date:', checkInDate);
             console.log('Check-out Date:', checkOutDate);
             handleReserve()
-            navigate('/hotel/confirmed')
+            navigate('/confirmed')
 
 
         }
