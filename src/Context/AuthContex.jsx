@@ -13,6 +13,13 @@ const AuthContex = ({ children }) => {
     const [user, setUser] = useState(null)
     const [loading, setLoadign] = useState(true)
 
+    const [country, setCountry] = useState("")
+    const [guest, setGuest] = useState(null)
+    const [rate, setRate] = useState(null)
+
+
+  
+
 
     useEffect((id = "National parks") => {
         fetch(`http://localhost:5000/hotels/${id}`)
@@ -55,7 +62,7 @@ const AuthContex = ({ children }) => {
 
 
 
-    const authInfo = {user, logout, setHotel, hotel, signup, login, profileupdate  }
+    const authInfo = { rate, setRate, guest, setGuest, country, setCountry, user, logout, setHotel, hotel, signup, login, profileupdate  }
 
     return (
         <div>
