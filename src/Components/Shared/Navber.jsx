@@ -16,7 +16,7 @@ const handleLogout =()=>{
 
 
     const manueBar = <>
-        <Link to="/" className='px-1 mr-2 font-bold text-md'>STAY</Link>
+        <Link to="/" className='px-1 mr-2 font-bold text-md'>HOME</Link>
         <Link to="/hotels" className='px-1 mr-2 font-bold text-md'>HOTELS</Link>
         <Link to="/" className='px-1 mr-2 font-bold text-md'>GATHER</Link>
         <Link to="/" className='px-1 mr-2 font-bold text-md'>EXPLORE</Link>

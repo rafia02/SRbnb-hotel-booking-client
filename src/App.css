@@ -3,12 +3,13 @@
   margin: 0 auto;
 
 }
-.items{
+
+.items {
   animation: kochu 4s linear infinite;
 }
 
 
-.love{
+.love {
   -webkit-text-stroke: 1.5px white;
 }
 

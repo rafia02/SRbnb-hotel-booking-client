@@ -71,9 +71,9 @@ const SearchBox = () => {
                     className="md:w-32 lg:w-52 p-3 md:p-5 outline-none md:border-r-2 m-2 md:m-0  border-rose-500"
                 />
                 <input name="guest" type="text" placeholder="Guest" className="md:w-32 lg:w-52 p-3 md:p-5 outline-none md:border-r-2 m-2 md:m-0  border-rose-500" />
-                <input name="rate" type="text" placeholder="Special Rate" className="md:w-32 lg:w-52 p-3 md:p-5 md:border-r-2 border-rose-500 outline-none" />
+                <input name="rate" type="text" placeholder="Highest Range" className="md:w-32 lg:w-52 p-3 md:p-5 md:border-r-2 border-rose-500 outline-none" />
 
-                <button type="submit" className=" bg-rose-600 text-white font-bold p-3 md:p-5 outline-none md:px-20">
+                <button type="submit" className=" bg-rose-600 text-center text-white font-bold px-10 py-3 m-2 md:m-0 md:p-5 outline-none md:px-10">
                         Book
         
                 </button>
