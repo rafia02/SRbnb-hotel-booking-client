@@ -61,19 +61,19 @@ const SearchBox = () => {
 
         <div>
             <form onSubmit={handleSearch}>
-                <input name="country" type="text" placeholder="Where are you going" className="md:w-48 lg:w-52 py-5 m-2 md:m-0 md:border-r-2 border-rose-500 outline-none px-5" />
+                <input name="country" type="text" placeholder="Where are you going" className="md:w-48 lg:w-52 p-3 md:p-5 m-2 md:m-0 md:border-r-2 border-rose-500 outline-none" />
                 <DatePicker
                     id="checkInDate"
                     placeholderText="Check In"
                     minDate={new Date()}
                     selected={checkInDate}
                     onChange={setCheckInDate}
-                    className="md:w-32 lg:w-52 py-5 outline-none md:border-r-2 m-2 md:m-0  border-rose-500 px-5"
+                    className="md:w-32 lg:w-52 p-3 md:p-5 outline-none md:border-r-2 m-2 md:m-0  border-rose-500"
                 />
-                <input name="guest" type="text" placeholder="Guest" className="md:w-32 lg:w-52 py-5 outline-none md:border-r-2 m-2 md:m-0  border-rose-500 px-5" />
-                <input name="rate" type="text" placeholder="Special Rate" className="md:w-32 lg:w-52 py-5 md:border-r-2 border-rose-500 outline-none px-5" />
+                <input name="guest" type="text" placeholder="Guest" className="md:w-32 lg:w-52 p-3 md:p-5 outline-none md:border-r-2 m-2 md:m-0  border-rose-500" />
+                <input name="rate" type="text" placeholder="Special Rate" className="md:w-32 lg:w-52 p-3 md:p-5 md:border-r-2 border-rose-500 outline-none" />
 
-                <button type="submit" className=" bg-rose-600 text-white font-bold py-5 outline-none px-8">
+                <button type="submit" className=" bg-rose-600 text-white font-bold p-3 md:p-5 outline-none md:px-20">
                         Book
         
                 </button>

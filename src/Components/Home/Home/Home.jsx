@@ -15,7 +15,7 @@ const Home = () => {
     return (
         <div className=''>
     
-                <video className='relative mb-5 ' autoPlay loop muted src={vdo}></video>
+                <video className='relative mb-10 ' autoPlay loop muted src={vdo}></video>
 
 
             <div className='absolute top-24 md:top-1/2 ml-5 md:ml-20'>

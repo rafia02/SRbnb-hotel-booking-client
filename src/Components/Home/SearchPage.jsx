@@ -22,7 +22,7 @@ const SearchPage = () => {
     }, [])
 
 
-        const filterData = data?.filter(d => d.room.guest <= guest && country === d.pleace.country && d.price <= rate)
+        const filterData = data?.filter(d => d.room.guest >= guest && country === d.pleace.country && d.price <= rate)
 
         console.log(filterData)
 
