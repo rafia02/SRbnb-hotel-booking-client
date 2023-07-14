@@ -8,6 +8,8 @@ import Inspiration from '../Inspiration';
 import Subscribe from '../Subscribe';
 import Offers from '../Offers';
 import Extra from '../Extra';
+import Facilities from '../Facilities';
+import Gallery from '../Gallery';
 
 
 
@@ -35,9 +37,11 @@ const Home = () => {
             <Catagories></Catagories>
             <Hotels></Hotels>
             <Inspiration></Inspiration>
+            <Gallery></Gallery>
+            <Facilities></Facilities>
             {/* <Offers></Offers> */}
             <Extra></Extra>
-            {/* <Subscribe></Subscribe> */}
+            <Subscribe></Subscribe>
             
 
 
