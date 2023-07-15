@@ -27,7 +27,7 @@ const ConfirmPay = () => {
     const { data: reserveData = [], refetch } = useQuery({
         queryKey: ["reserve", user?.email],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/reserve?email=${user?.email}`)
+            const res = await fetch(`https://room-booking-server.vercel.app/reserve?email=${user?.email}`)
             const data = await res.json()
             return data
         }
@@ -68,7 +68,7 @@ const ConfirmPay = () => {
         }
 
 
-        fetch(`http://localhost:5000/booking`, {
+        fetch(`https://room-booking-server.vercel.app/booking`, {
             method: "POST",
             headers: {
                 "Content-type" : "application/json"

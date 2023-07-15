@@ -20,9 +20,9 @@ const Gallery = () => {
         },
     ]
     return (
-        <div className='my-20'>
+        <div className='my-20 mx-6'>
             <h1 className='text-4xl mb-5 font-bold text-center'>Gallery</h1>
-            <div className='flex flex-col md:flex-row md:gap-7'>
+            <div className='flex flex-col md:flex-row gap-5 md:gap-7'>
                 <div className='w-full md:w-8/12'>
                     <div className='grid grid-cols-1 gap-5 md:grid-cols-2'>
                         {
@@ -33,7 +33,7 @@ const Gallery = () => {
                                     </div>
 
                                 </div>
-                                <div className='right-1/3 absolute bottom-0 hover:top-0'>
+                                <div className='right-1/3  absolute bottom-28 text-white font-bold text-xl'>
                                     <h2>{g.title}</h2>
                                 </div>
                             </div>)
@@ -42,8 +42,8 @@ const Gallery = () => {
                     </div>
                 </div>
 
-                <div className='w-full md:w-4/12'>
-                    <img className='h-full' src="https://demo.bravisthemes.com/seaside/wp-content/uploads/2023/05/blog4-800x800.jpg" alt="" />
+                <div className='w-full overflow-hidden md:w-4/12'>
+                    <img className='h-full transition-transform duration-300 transform-gpu hover:scale-105 ' src="https://demo.bravisthemes.com/seaside/wp-content/uploads/2023/05/blog4-800x800.jpg" alt="" />
                 </div>
             </div>
         </div>

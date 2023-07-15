@@ -5,7 +5,7 @@ const Inspiration = () => {
 
 
         <div className='mt-28  mx-6'> 
-            <h1 className='text-2xl font-bold my-5'>Get inspiration for your next trip</h1>
+            <h1 className='text-2xl font-bold my-5'>Get Inspiration For Your Next Trip</h1>
 
             <div className='grid grid-cols-1 gap-4 md:grid-cols-2  overlay'>
                 <div className="relative rounded-xl  overflow-hidden">
@@ -23,14 +23,14 @@ const Inspiration = () => {
 
                 <div className='grid grid-cols-1 gap-4 md:grid-cols-2'>
                     <div>
-                        <img className='rounded-xl' src="https://cf.bstatic.com/xdata/images/xphoto/540x405/235954988.webp?k=862d44bdd997a201fc4faf07872a8b16348a6f959c74e060ce5a9ec957a34ddf&o=" alt="" />
+                        <img className='rounded-xl transition-transform duration-300 transform-gpu hover:scale-105' src="https://cf.bstatic.com/xdata/images/xphoto/540x405/235954988.webp?k=862d44bdd997a201fc4faf07872a8b16348a6f959c74e060ce5a9ec957a34ddf&o=" alt="" />
                         <div>
                             <p className=' mt-3 font-bold'>The 5 best summer festivals in Japan</p>
                             <p className='text-sm mt-1 text-justify'>Summer in Japan is a great time to witness tradition, culture and community come together at one of the country's many festivals.</p>
                         </div>
                     </div>
                     <div>
-                        <img className='rounded-xl' src="https://cf.bstatic.com/xdata/images/xphoto/540x405/233966363.webp?k=94e5bab6c8c9d01f948dfff375ab012f67c81cdc238715dba96832edcd883ac8&o=" alt="" />
+                        <img className='rounded-xl transition-transform duration-300 transform-gpu hover:scale-105' src="https://cf.bstatic.com/xdata/images/xphoto/540x405/233966363.webp?k=94e5bab6c8c9d01f948dfff375ab012f67c81cdc238715dba96832edcd883ac8&o=" alt="" />
                         <div>
                             <p className=' mt-3 font-bold'>Seattle a city guide</p>
                             <p className='text-sm mt-1 text-justify'>Summer in Japan is a great time to witness tradition, culture and community come together at one of the country's many festivals.</p>

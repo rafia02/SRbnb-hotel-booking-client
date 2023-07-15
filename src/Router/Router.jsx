@@ -14,8 +14,8 @@ import Layout from "../Layout/Layout";
 export const router = createBrowserRouter([
     {path: "/", element: <Layout></Layout>, children: [
         {path: "/", element: <Home></Home>},
-        // {path: "/:id", loader: ({params})=>fetch(`http://localhost:5000/hotels/${params.id}`), element: <Hotels></Hotels>},
-        {path: "/hotel/:id", loader: ({params})=>fetch(`http://localhost:5000/hotel/${params.id}`), element: <HotelDetails></HotelDetails>},
+        // {path: "/:id", loader: ({params})=>fetch(`https://room-booking-server.vercel.app/hotels/${params.id}`), element: <Hotels></Hotels>},
+        {path: "/hotel/:id", loader: ({params})=>fetch(`https://room-booking-server.vercel.app/hotel/${params.id}`), element: <HotelDetails></HotelDetails>},
         {path: "/confirmed", element: <ConfirmPay></ConfirmPay>},
         {path: "/login", element: <Login></Login>},
         {path: "/signup", element: <SignUp></SignUp>},

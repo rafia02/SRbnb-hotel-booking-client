@@ -8,7 +8,7 @@ const AllHotelPage = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/hotels`)
+        fetch(`https://room-booking-server.vercel.app/hotels`)
             .then(res => res.json())
             .then(data => setProducts(data))
             .catch(e => console.error(e))

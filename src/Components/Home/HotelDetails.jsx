@@ -117,7 +117,7 @@ const HotelDetails = () => {
 
         // console.log(reserveData)
 
-        fetch("http://localhost:5000/reserve", {
+        fetch("https://room-booking-server.vercel.app/reserve", {
             method: "POST",
             headers: {
                 'Content-type': 'application/json'

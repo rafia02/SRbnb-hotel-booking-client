@@ -23,7 +23,7 @@ const Catagories = () => {
   const { data: catagories = [], refetch } = useQuery({
     queryKey: ['catagories'],
     queryFn: async () => {
-      const res = await fetch('http://localhost:5000/catagories')
+      const res = await fetch('https://room-booking-server.vercel.app/catagories')
       const data = await res.json()
       return data
     }
@@ -39,7 +39,7 @@ const Catagories = () => {
   const handleCatagory = (id) => {
 
 
-    fetch(`http://localhost:5000/hotels/${id}`)
+    fetch(`https://room-booking-server.vercel.app/hotels/${id}`)
       .then(res => res.json())
       .then(data => setHotel(data))
       .catch(e => console.error(e))

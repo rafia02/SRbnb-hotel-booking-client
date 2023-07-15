@@ -12,7 +12,7 @@ const SearchPage = () => {
 
 
     useEffect(()=>{
-        fetch("http://localhost:5000/hotels")
+        fetch("https://room-booking-server.vercel.app/hotels")
         .then(res => res.json())
         .then(data => {
             setData(data)

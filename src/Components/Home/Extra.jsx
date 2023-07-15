@@ -24,7 +24,7 @@ const Extra = () => {
 
                 </div>
 
-                
+
             </div>
         </div>
     );

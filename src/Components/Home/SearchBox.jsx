@@ -35,14 +35,14 @@ const SearchBox = () => {
         navigate("/search/hotel")
 
 
-        // fetch(`http://localhost:5000/search?country=${country}&guest=${guest}&rate=${rate}`)
+        // fetch(`https://room-booking-server.vercel.app/search?country=${country}&guest=${guest}&rate=${rate}`)
         // .then(res => res.json())
         // .then(data => console.log(data))
         // .catch(e => console.error(e))
 
 
 
-        // fetch("http://localhost:5000/hotels")
+        // fetch("https://room-booking-server.vercel.app/hotels")
         //     .then(res => res.json())
         //     .then(data => setData(data))
         //     .catch(e => console.error(e))
