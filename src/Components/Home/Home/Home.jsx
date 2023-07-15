@@ -10,7 +10,8 @@ import Offers from '../Offers';
 import Extra from '../Extra';
 import Facilities from '../Facilities';
 import Gallery from '../Gallery';
-import Try from '../Try';
+
+import Reviews from '../Reviews';
 
 
 
@@ -38,11 +39,12 @@ const Home = () => {
             <Catagories></Catagories>
             <Hotels></Hotels>
             <Inspiration></Inspiration>
-            {/* <Try></Try> */}
+      
             <Gallery></Gallery>
             <Facilities></Facilities>
             {/* <Offers></Offers> */}
             <Extra></Extra>
+            <Reviews></Reviews>
             <Subscribe></Subscribe>
             
             

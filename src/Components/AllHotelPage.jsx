@@ -29,7 +29,7 @@ const AllHotelPage = () => {
 
 
     return (
-        <div>
+        <div className='mx-6'>
 
 
             <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 gap-y-14 my-16'>
@@ -43,18 +43,18 @@ const AllHotelPage = () => {
 
 
 
-            <div className='flex justify-center my-20'>
+            <div className='flex mx-6 justify-center my-20'>
                 <ReactPaginate
                     previousLabel="Previous"
                     nextLabel="Next"
                     breakLabel="..."
                     breakClassName="break-me"
                     pageCount={pageCount}
-                    marginPagesDisplayed={2}
-                    pageRangeDisplayed={5}
+                    marginPagesDisplayed={1}
+                    pageRangeDisplayed={1}
                     onPageChange={handlePageChange}
                     containerClassName="pagination flex"
-                    activeClassName=" active text-white bg-blue-500"
+                    activeClassName=" active text-white bg-sky-500"
                     pageClassName="mx-2 px-3 py-1 text-white font-bold bg-rose-600 rounded"
                     previousClassName="mx-2 px-3 py-1 text-white font-bold bg-rose-600 rounded"
                     nextClassName="mx-2 px-3 py-1 text-white font-bold bg-rose-600 rounded"
