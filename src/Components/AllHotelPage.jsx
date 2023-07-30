@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ReactPaginate from 'react-paginate';
 import SingleHotel from './Home/SingleHotel';
+import Loader from './Shared/Loader';
 
 const AllHotelPage = () => {
     const [products, setProducts] = useState([]);
@@ -27,6 +28,10 @@ const AllHotelPage = () => {
     console.log(offset)
     const currentProducts = products.slice(offset, offset + itemsPerPage);
 
+
+    if(!products){
+        return <Loader></Loader>
+    }
 
     return (
         <div className='mx-6'>

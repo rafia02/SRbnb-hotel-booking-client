@@ -12,12 +12,15 @@
   "dependencies": {
     "@stripe/react-stripe-js": "^2.1.1",
     "@stripe/stripe-js": "^1.54.1",
+    "chart.js": "^4.3.0",
     "firebase": "^9.23.0",
     "framer-motion": "^10.12.21",
     "google-map-react": "^2.2.1",
+    "lottie-react": "^2.4.0",
     "react": "^18.2.0",
     "react-alice-carousel": "^2.7.1",
     "react-carousel": "^4.3.0",
+    "react-chartjs-2": "^5.2.0",
     "react-datepicker": "^4.15.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.45.1",
@@ -32,6 +35,7 @@
     "react-router-dom": "^6.14.0",
     "react-slick": "^0.29.0",
     "react-stripe-js": "^1.1.5",
+    "recharts": "^2.7.2",
     "scroll-carousel": "^1.2.1",
     "stripe": "^12.12.0",
     "swiper": "^9.4.1"

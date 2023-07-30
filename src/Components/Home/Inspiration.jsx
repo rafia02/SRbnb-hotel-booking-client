@@ -1,4 +1,6 @@
 import React from 'react';
+import {motion} from 'framer-motion'
+
 
 const Inspiration = () => {
     return (
@@ -7,7 +9,7 @@ const Inspiration = () => {
         <div className='mt-28  mx-6'> 
             <h1 className='text-2xl font-bold my-5'>Get Inspiration For Your Next Trip</h1>
 
-            <div className='grid grid-cols-1 gap-4 md:grid-cols-2  overlay'>
+            <motion.div initial= {{opacity: 0, x: -200}} whileInView={{opacity: 1, x: 1}} className='grid grid-cols-1 gap-4 md:grid-cols-2  overlay'>
                 <div className="relative rounded-xl  overflow-hidden">
                     <img
                         src="https://www.travoh.com/wp-content/uploads/2021/11/001-InterContinental-Hayman-Island-Resort-Whitsunday-Islands-Australia.jpg"
@@ -38,7 +40,7 @@ const Inspiration = () => {
                     </div>
 
                 </div>
-            </div>
+            </motion.div>
 
         </div>
 

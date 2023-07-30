@@ -1,4 +1,5 @@
 import React from 'react';
+import {motion} from "framer-motion"
 
 const Gallery = () => {
     const galleryData = [
@@ -21,8 +22,8 @@ const Gallery = () => {
     ]
     return (
         <div className='my-20 mx-6'>
-            <h1 className='text-4xl mb-5 font-bold text-center'>Gallery</h1>
-            <div className='flex flex-col md:flex-row gap-5 md:gap-7'>
+            <h1 className='text-4xl mb-7 font-bold text-center'>Gallery</h1>
+            <motion.div initial= {{opacity: 0, x: -200}} whileInView={{opacity: 1, x: 1}} className='flex flex-col md:flex-row gap-5 md:gap-7'>
                 <div className='w-full md:w-8/12'>
                     <div className='grid grid-cols-1 gap-5 md:grid-cols-2'>
                         {
@@ -45,7 +46,7 @@ const Gallery = () => {
                 <div className='w-full overflow-hidden md:w-4/12'>
                     <img className='h-full transition-transform duration-300 transform-gpu hover:scale-105 ' src="https://demo.bravisthemes.com/seaside/wp-content/uploads/2023/05/blog4-800x800.jpg" alt="" />
                 </div>
-            </div>
+            </motion.div>
         </div>
     );
 };

@@ -16,6 +16,8 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { context } from '../../Context/AuthContex';
 import toast from 'react-hot-toast';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
 
 
 const HotelDetails = () => {
@@ -159,16 +161,28 @@ const HotelDetails = () => {
 
 
                     <div className='grid grid-cols-1 md:grid-cols-2 gap-2'>
-                        <div>
-                            <img className='rounded-tl-xl rounded-bl-xl w-full h-[360px]' src={img1} alt="" />
-                        </div>
+                        <PhotoProvider>
+                            <PhotoView src={img1}>
+                                <img className='rounded-tl-xl rounded-bl-xl w-full h-[360px]' src={img1} alt="" />
+                            </PhotoView>
+                        </PhotoProvider>
                         <div className='w-full'>
-                            <div className='grid grid-cols-2 gap-2 w-full'>
-                                <img className='h-44 w-full ' src={img2} alt="" />
-                                <img className='h-44 w-full rounded-tr-xl' src={img3} alt="" />
-                                <img className='h-44 w-full' src={img4} alt="" />
-                                <img className='h-44 w-full rounded-br-xl' src={img5} alt="" />
-                            </div>
+                            <PhotoProvider>
+                                <div className='grid grid-cols-2 gap-2 w-full'>
+                                    <PhotoView src={img2}>
+                                        <img className='h-44 w-full ' src={img2} alt="" />
+                                    </PhotoView>
+                                    <PhotoView src={img3}>
+                                        <img className='h-44 w-full rounded-tr-xl' src={img3} alt="" />
+                                    </PhotoView>
+                                    <PhotoView src={img4}>
+                                        <img className='h-44 w-full' src={img4} alt="" />
+                                    </PhotoView>
+                                    <PhotoView src={img5}>
+                                        <img className='h-44 w-full rounded-br-xl' src={img5} alt="" />
+                                    </PhotoView>
+                                </div>
+                            </PhotoProvider>
                         </div>
                     </div>
                 </div>

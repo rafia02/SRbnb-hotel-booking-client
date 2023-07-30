@@ -1,10 +1,15 @@
 import React, { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { context } from '../../Context/AuthContex';
+import Loader from '../Shared/Loader';
 import SingleHotel from './SingleHotel';
 
 const Hotels = () => {
 const {hotel} = useContext(context)
+
+if(!hotel){
+    return <Loader></Loader>
+}
 
 
     

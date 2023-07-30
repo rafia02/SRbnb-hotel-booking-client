@@ -1,9 +1,11 @@
 import React from 'react';
+import Lottie from "lottie-react";
+import spiner from '../../images/loading.json'
 
 const Loader = () => {
     return (
-        <div>
-            <h1>jfffffffffffffffffffffff</h1>
+        <div className=''>
+            <Lottie animationData={spiner}></Lottie>
         </div>
     );
 };

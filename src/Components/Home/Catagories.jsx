@@ -11,6 +11,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { Link } from 'react-router-dom';
 import { context } from '../../Context/AuthContex';
+import Loader from '../Shared/Loader';
 
 
 
@@ -66,6 +67,11 @@ const Catagories = () => {
       items: 3
     }
   };
+
+
+  if(!catagories){
+    return <Loader></Loader>
+  }
 
 
 
