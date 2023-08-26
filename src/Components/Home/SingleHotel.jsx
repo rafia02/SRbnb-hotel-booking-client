@@ -15,7 +15,7 @@ const SingleHotel = ({ htl }) => {
                         <img className='h-full w-full rounded-lg' src={img1} alt="" />
                     </div>
 
-                    <p className=' text-gray-700  love absolute top-4 right-4 text-2xl [-webkit-text-stroke: 2px white;] '>❤</p>
+                    <p className=' text-gray-200  love absolute top-4 right-4 text-2xl [-webkit-text-stroke: 2px white;] '>❤</p>
 
                     {/* <BsFillHeartFill className=' text-slate-200 absolute top-4 right-4 text-2xl '></BsFillHeartFill> */}
 

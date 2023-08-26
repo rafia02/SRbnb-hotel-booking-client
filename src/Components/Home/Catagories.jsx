@@ -77,7 +77,7 @@ const Catagories = () => {
 
   return (
 
-    <div className='mx-6'>
+    <div className='mx-6 '>
 
 
       <Carousel responsive={responsive}>

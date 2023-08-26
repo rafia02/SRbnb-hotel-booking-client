@@ -5,12 +5,13 @@ import { context } from '../../Context/AuthContex';
 import toast from 'react-hot-toast';
 
 const SignUp = () => {
-    const { signup } = useContext(context)
-    const { register, handleSubmit, errors } = useForm();
+    const { signup, profileupdate } = useContext(context)
+    const { register, handleSubmit,  formState: { errors } } = useForm();
 
     const handleSignup = (data) => {
 
         console.log('Form submitted:', data);
+        console.log(data.name)
 
         signup(data.email, data.password)
             .then(res => {
@@ -55,7 +56,7 @@ const SignUp = () => {
                             })}
                             className="mt-1 px-4 py-2 border border-gray-300 rounded-md w-full"
                         />
-                        {/* {errors.email && <p classemail='text-red-600'>{errors.name?.message}</p>} */}
+                        {/* {errors.email && <p className='text-red-600'>{errors.name?.message}</p>} */}
                     </div>
 
 
@@ -72,7 +73,7 @@ const SignUp = () => {
                             })}
                             className="mt-1 px-4 py-2 border border-gray-300 rounded-md w-full"
                         />
-                        {/* {errors.password && <p className='text-red-600'>{errors.password?.message}</p>} */}
+                        {errors.password && <p className='text-red-600'>{errors.password?.message}</p>}
 
                     </div>
 

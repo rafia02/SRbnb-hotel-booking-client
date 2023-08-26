@@ -16,7 +16,7 @@ const ConfirmPay = () => {
     const [mgs, setMgs] = useState(false)
     const [phn, setPhn] = useState(false)
     const [id, setId] = useState("")
-    const [totalPrice, setTotalPrice] = useState(null)
+    const [totalPrice, setTotalPrice] = useState(0)
     const countries = ["Afghanistan", "Åland Islands", "Albania", "Algeria", "American Samoa", "Andorra", "Angola", "Anguilla", "Antarctica", "Antigua & Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Brazil", "Canada", "China", "Colombia", "Estonia", "Finland", "France", "Germany", "Hong Kong", "Iceland", "Indonesia", "Ireland", "Japan", "Kenya", "Malaysia", "Nepal", "Netherlands", "New Zealand", "Pakistan", "Philippines", "Singapore", "South Africa", "Thailand", "India"]
 
 
@@ -33,7 +33,7 @@ const ConfirmPay = () => {
         }
     })
 
-   
+
 
     const handlePhoneChange = (value) => {
         setPhone(value);
@@ -44,17 +44,17 @@ const ConfirmPay = () => {
 
 
 
-    const handleRequest =(e)=>{
+    const handleRequest = (e) => {
         e.preventDefault();
-        const form = e.target 
+        const form = e.target
         const street = form.street.value
         const state = form.state.value
         const gip = form.gip.value
         const city = form.city.value
         const country = form.country.value
-        const message = form.message.value
-        
-        const bookData ={
+        const message = form.message?.value
+
+        const bookData = {
             street,
             state,
             gip,
@@ -63,25 +63,26 @@ const ConfirmPay = () => {
             message,
             price: totalPrice,
             status: false,
-            email: user.email, 
-            id, 
+            email: user.email,
+            id,
         }
+        console.log(bookData)
 
 
         fetch(`https://room-booking-server.vercel.app/booking`, {
             method: "POST",
             headers: {
-                "Content-type" : "application/json"
+                "Content-type": "application/json"
             },
             body: JSON.stringify(bookData)
         })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data)
-        toast.success("Successfully Booking")
-         form.reset()
-        })
-        .catch(e => console.error(e))
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                toast.success("Successfully Booking")
+                form.reset()
+            })
+            .catch(e => console.error(e))
 
     }
 
@@ -90,15 +91,15 @@ const ConfirmPay = () => {
 
 
     return (
-        <div className='grid grid-cols-2 m-6 gap-20'>
+        <div className='grid grid-cols-1 md:grid-cols-2 m-6 gap-20'>
             <div className='grid grid-cols-1 gap-10'>
                 <div>
                     {
                         reserveData.map(d => <div
-                        key={d._id}
-                        setId={d._id}
-                         setTotalPrice={d.totalPrice} 
-                         className=' mb-10 border rounded p-5'>
+                            key={d._id}
+                            setId={d._id}
+                            setTotalPrice={d.totalPrice}
+                            className=' mb-10 border rounded p-5'>
                             <div className='flex gap-6 items-center'>
                                 <div className='w-2/5'>
                                     <img className='w-full rounded-lg' src={d.img1} alt="" />
@@ -223,32 +224,18 @@ const ConfirmPay = () => {
                                             <p>Add and confirm your phone number to get trip updates.</p>
                                         </div>
                                         <div className='w-1/6 justify-end flex'>
-                                            <Link onClick={() =>setPhn(true)} className='border-2  border-stone-800 px-4 rounded-md py-[2px]'>Add</Link>
+                                            <Link onClick={() => setPhn(true)} className='border-2  border-stone-800 px-4 rounded-md py-[2px]'>Add</Link>
                                         </div>
                                     </div>
                             }
 
 
 
-
-
-
-
-
-
-
-
                         </div>
-
 
                         <div>
                             <button type='submit' className="bg-rose-500 text-lg hover:bg-pink-500 text-white font-bold py-3 px-6 rounded">Request To Book</button>
                         </div>
-
-
-
-
-                        
 
                     </form>
 

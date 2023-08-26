@@ -11,7 +11,7 @@ const SearchBox = () => {
     const [data, setData] = useState([])
     const navigate = useNavigate()
 
-    const {setRate, setGuest,setCountry } = useContext(context)
+    const { setRate, setGuest, setCountry } = useContext(context)
 
     const handleSearch = (e) => {
         e.preventDefault();
@@ -59,24 +59,27 @@ const SearchBox = () => {
     return (
 
 
-        <div>
+        <div className='mb-10'>
             <form onSubmit={handleSearch}>
-                <input name="country" type="text" placeholder="Where are you going" className="md:w-48 lg:w-52 p-3 md:p-5 m-2 md:m-0 md:border-r-2 border-rose-500 outline-none" />
+                <input name="country" type="text" placeholder="Where are you going" className="border md:w-48 lg:w-52 p-3 md:p-5 m-2 md:m-0 md:border-r-2 border-rose-500 outline-none" />
                 <DatePicker
                     id="checkInDate"
                     placeholderText="Check In"
                     minDate={new Date()}
                     selected={checkInDate}
                     onChange={setCheckInDate}
-                    className="md:w-32 lg:w-52 p-3 md:p-5 outline-none md:border-r-2 m-2 md:m-0  border-rose-500"
+                    className="border md:w-32 lg:w-52 p-3 md:p-5 outline-none md:border-r-2 m-2 md:m-0  border-rose-500"
                 />
-                <input name="guest" type="text" placeholder="Guest" className="md:w-32 lg:w-52 p-3 md:p-5 outline-none md:border-r-2 m-2 md:m-0  border-rose-500" />
-                <input name="rate" type="text" placeholder="Highest Range" className="md:w-32 lg:w-52 p-3 md:p-5 md:border-r-2 border-rose-500 outline-none" />
+                <input name="guest" type="text" placeholder="Guest" className="border md:w-32 lg:w-52 p-3 md:p-5 outline-none md:border-r-2 m-2 md:m-0  border-rose-500" />
 
-                <button type="submit" className=" bg-rose-600 text-center text-white font-bold px-10 py-3 m-2 md:m-0 md:p-5 outline-none md:px-10">
+             
+                    <input name="rate" type="text" placeholder="Highest Range" className="border md:w-32 lg:w-52 p-3 m-2 md:m-0 md:p-5 md:border-r-2 border-rose-500 outline-none" />
+
+                    <button type="submit" className="block w-52 md:w-40 rounded md:rounded-none md:inline bg-rose-600 text-center text-white font-bold  py-3 m-2  md:m-0 md:p-5 outline-none md:px-10">
                         Book
-        
-                </button>
+
+                    </button>
+             
 
                 {/* <input type="submit" value="Book" className=" bg-rose-600 text-white font-bold py-5 outline-none px-8" /> */}
 

@@ -27,7 +27,7 @@ const Home = () => {
                 <video className='relative mb-10 ' autoPlay loop muted src={vdo}></video>
 
 
-                <div className='absolute top-24 md:top-1/2 ml-5 md:ml-20'>
+                <div className='md:absolute  md:top-1/2 ml-5 md:ml-20'>
                     <div className='hidden md:block text-white text-center mb-10 text-4xl font-bold font-serif italic'>
                         <h1>Explore Deffierent Country</h1>
                         <h1 className='my-4'> &</h1>

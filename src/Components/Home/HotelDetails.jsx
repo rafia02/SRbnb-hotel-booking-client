@@ -146,7 +146,7 @@ const HotelDetails = () => {
         <div className='mx-6 my-9'>
 
             <div>
-                <h1 className="text-3xl font-bold">{title}</h1>
+                <h1 className="text-xl md:text-3xl font-bold">{title}</h1>
                 <div>
                     <div className='flex mt-3 font-semibold mb-10'>
                         <p className=' font-extrabold mr-1'>★ </p>
@@ -352,7 +352,7 @@ const HotelDetails = () => {
                                             <label htmlFor="adults" className="block text-sm font-medium text-gray-700">
                                                 Adults
                                             </label>
-                                            <div className="mt-1 relative rounded-md shadow-sm">
+                                            <div className="mt-1  relative rounded-md shadow-sm">
 
 
                                                 <input
@@ -391,12 +391,28 @@ const HotelDetails = () => {
                                     </div>
 
 
-                                    <button
+                                    {
+                                        user?.email ?
+                                        <button
                                         type="submit"
                                         className="mt-4 px-4 text-center py-2 w-full outline-none text-white font-bold bg-rose-600  rounded-md hover:bg-rose-700"
                                     >
                                         Reserve
                                     </button>
+                                    :
+
+                                    <Link to="/login"
+                                        type="submit"
+                                        className="mt-4 px-4 text-center py-2 w-full outline-none text-white font-bold bg-rose-600  rounded-md hover:bg-rose-700"
+                                    >
+                                        Reserve
+                                    </Link>
+
+                                    }
+
+
+                                    
+
                                 </form>
 
                                 <p className='text-center mt-4 mb-9'>You won't be charged yet</p>
