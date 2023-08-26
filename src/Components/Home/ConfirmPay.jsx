@@ -3,9 +3,10 @@ import { useQuery } from 'react-query';
 import { context } from '../../Context/AuthContex';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import toast from 'react-hot-toast';
-
+import Loader from '../Shared/Loader';
+import { AiFillDelete } from "react-icons/ai";
 
 
 
@@ -16,15 +17,12 @@ const ConfirmPay = () => {
     const [mgs, setMgs] = useState(false)
     const [phn, setPhn] = useState(false)
     const [id, setId] = useState("")
+    const navigate = useNavigate()
     const [totalPrice, setTotalPrice] = useState(0)
     const countries = ["Afghanistan", "Åland Islands", "Albania", "Algeria", "American Samoa", "Andorra", "Angola", "Anguilla", "Antarctica", "Antigua & Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Brazil", "Canada", "China", "Colombia", "Estonia", "Finland", "France", "Germany", "Hong Kong", "Iceland", "Indonesia", "Ireland", "Japan", "Kenya", "Malaysia", "Nepal", "Netherlands", "New Zealand", "Pakistan", "Philippines", "Singapore", "South Africa", "Thailand", "India"]
 
 
-
-
-
-
-    const { data: reserveData = [], refetch } = useQuery({
+    const { data: reserveData = [], isLoading, refetch } = useQuery({
         queryKey: ["reserve", user?.email],
         queryFn: async () => {
             const res = await fetch(`https://room-booking-server.vercel.app/reserve?email=${user?.email}`)
@@ -41,6 +39,9 @@ const ConfirmPay = () => {
     };
 
 
+    if (isLoading) {
+        return <Loader></Loader>
+    }
 
 
 
@@ -81,8 +82,28 @@ const ConfirmPay = () => {
                 console.log(data)
                 toast.success("Successfully Booking")
                 form.reset()
+                navigate("/successPage")
             })
             .catch(e => console.error(e))
+
+    }
+
+
+    const handleDelete = (id)=>{
+        console.log(id)
+        fetch(`https://sr-bnb-hotel-booking-server.vercel.app/reserve/${id}`,{
+            method: "DELETE",
+            headers: {
+                "Content-type": "application/json"
+            },
+            
+        })
+        .then(res => res.json())
+        .then(data =>{
+            console.log(data)
+            refetch()
+        })
+        .catch(e =>console.error(e))
 
     }
 
@@ -98,8 +119,9 @@ const ConfirmPay = () => {
                         reserveData.map(d => <div
                             key={d._id}
                             setId={d._id}
-                            setTotalPrice={d.totalPrice}
-                            className=' mb-10 border rounded p-5'>
+                            setTotalPrice={d.tax}
+                            className=' mb-10 border  rounded p-5'>
+
                             <div className='flex gap-6 items-center'>
                                 <div className='w-2/5'>
                                     <img className='w-full rounded-lg' src={d.img1} alt="" />
@@ -149,6 +171,10 @@ const ConfirmPay = () => {
                                     </div>
 
                                 </div>
+                            </div>
+
+                            <div onClick={()=>handleDelete(d._id)} className='flex justify-center'>
+                                <AiFillDelete className=' text-2xl duration-500 hover:text-rose-500'></AiFillDelete>
                             </div>
                         </div>)
                     }

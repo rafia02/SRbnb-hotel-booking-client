@@ -18,7 +18,7 @@ const Navber = () => {
     const manueBar = <>
         <Link to="/" className='px-1  mb-2 md:mb-0 mr-2 font-bold text-md'>HOME</Link>
         <Link to="/hotels" className='px-1  mr-2 mb-2 md:mb-0  font-bold text-md'>HOTELS</Link>
-        <Link to="/analysis" className='px-1  mr-2 mb-2 md:mb-0  font-bold text-md'>ANALYSIS</Link>
+        <Link to="/analysis" className='px-1  mr-2 mb-2 md:mb-0  font-bold text-md'>FAQ</Link>
         <Link to="/explore" className='px-1  mr-2 mb-2 md:mb-0  font-bold text-md'>EXPLORE</Link>
         
     </>

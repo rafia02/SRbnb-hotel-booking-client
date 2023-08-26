@@ -1,13 +1,13 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import { context } from '../../Context/AuthContex';
 import toast from 'react-hot-toast';
 
 const SignUp = () => {
     const { signup, profileupdate } = useContext(context)
-    const { register, handleSubmit,  formState: { errors } } = useForm();
-
+    const { register, handleSubmit, formState: { errors } } = useForm();
+    const navigate = useNavigate()
     const handleSignup = (data) => {
 
         console.log('Form submitted:', data);
@@ -18,6 +18,7 @@ const SignUp = () => {
                 console.log(res.user)
                 toast.success("Successly sign up")
                 profileupdate({ displayName: data.name })
+                navigate("/")
                     .then(() => { })
                     .catch(e => console.error(e))
 

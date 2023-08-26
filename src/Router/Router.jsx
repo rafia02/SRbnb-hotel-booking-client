@@ -11,6 +11,7 @@ import SearchPage from "../Components/Home/SearchPage";
 import Login from "../Components/Shared/Login";
 import SignUp from "../Components/Shared/SignUp";
 import Layout from "../Layout/Layout";
+import { Success } from "../Components/Success/Success";
 
 
 export const router = createBrowserRouter([
@@ -25,7 +26,8 @@ export const router = createBrowserRouter([
             { path: "/hotels", element: <AllHotelPage></AllHotelPage> },
             { path: "/search/hotel", element: <SearchPage></SearchPage> },
             {path: "/analysis", element: <Analysis></Analysis>},
-            {path: "/explore", element: <ExplorePage></ExplorePage>}
+            {path: "/explore", element: <ExplorePage></ExplorePage>},
+            {path: "/successPage", element: <Success></Success>}
 
 
         ]
