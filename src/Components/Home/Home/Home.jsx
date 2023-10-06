@@ -2,7 +2,7 @@ import React from 'react';
 import GoogleMap from '../../Shared/GoogleMap';
 import Catagories from '../Catagories';
 import Hotels from '../Hotels';
-import SearchBox from '../SearchBox';
+
 import vdo from "../../../images/3466927036.mp4"
 import Inspiration from '../Inspiration';
 import Subscribe from '../Subscribe';
@@ -12,6 +12,7 @@ import Facilities from '../Facilities';
 import Gallery from '../Gallery';
 
 import Reviews from '../Reviews';
+import FilterModal from '../FilterModal';
 
 
 
@@ -22,9 +23,9 @@ const Home = () => {
 
 
     return (
-        <div className=''>
+        <div className='pt-7'>
 
-            <div>
+            {/* <div>
                 <video className='relative mb-10 ' autoPlay loop muted src={vdo}></video>
 
 
@@ -36,7 +37,8 @@ const Home = () => {
                     </div>
                     <SearchBox></SearchBox>
                 </div>
-            </div>
+            </div> */}
+            <FilterModal></FilterModal>
             <Catagories></Catagories>
             <Hotels></Hotels>
             <Inspiration></Inspiration>

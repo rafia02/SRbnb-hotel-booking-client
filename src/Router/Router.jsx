@@ -12,6 +12,7 @@ import Login from "../Components/Shared/Login";
 import SignUp from "../Components/Shared/SignUp";
 import Layout from "../Layout/Layout";
 import { Success } from "../Components/Success/Success";
+import FilterPage from "../Components/FilterPage";
 
 
 export const router = createBrowserRouter([
@@ -22,6 +23,7 @@ export const router = createBrowserRouter([
             { path: "/hotel/:id", loader: ({ params }) => fetch(`https://room-booking-server.vercel.app/hotel/${params.id}`), element: <HotelDetails></HotelDetails> },
             { path: "/confirmed", element: <ConfirmPay></ConfirmPay> },
             { path: "/login", element: <Login></Login> },
+            { path: "/filter/hotel", loader: () => fetch(`https://room-booking-server.vercel.app/hotels`), element: <FilterPage></FilterPage> },
             { path: "/signup", element: <SignUp></SignUp> },
             { path: "/hotels", element: <AllHotelPage></AllHotelPage> },
             { path: "/search/hotel", element: <SearchPage></SearchPage> },

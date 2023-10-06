@@ -1,11 +1,22 @@
 import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { context } from '../../Context/AuthContex';
 import logo from '../../images/logo2.png'
+import { FiSearch } from "react-icons/fi";
+import SearchBox from './SearchBox';
+
 
 const Navber = () => {
-    const { user, logout } = useContext(context)
+    const { user, logout, show, setShow } = useContext(context)
+
+
+    const navigete = useNavigate()
+
+    const handleShow = () => {
+        setShow(!show)
+        navigete("/")
+    }
 
     const handleLogout = () => {
         logout()
@@ -16,55 +27,97 @@ const Navber = () => {
 
 
     const manueBar = <>
-        <Link to="/" className='px-1  mb-2 md:mb-0 mr-2 font-bold text-md'>HOME</Link>
-        <Link to="/hotels" className='px-1  mr-2 mb-2 md:mb-0  font-bold text-md'>HOTELS</Link>
-        <Link to="/analysis" className='px-1  mr-2 mb-2 md:mb-0  font-bold text-md'>FAQ</Link>
-        <Link to="/explore" className='px-1  mr-2 mb-2 md:mb-0  font-bold text-md'>EXPLORE</Link>
-        
+        <Link to="/" className='px-1  mb-2 md:mb-0 mr-2 font-semibold'>Home</Link>
+        <Link to="/hotels" className='px-1  mr-2 mb-2 md:mb-0  font-semibold'>Hotels</Link>
+        <Link to="/analysis" className='px-1  mr-2 mb-2 md:mb-0  font-semibold'>Faq</Link>
+        <Link to="/explore" className='px-1  mr-2 mb-2 md:mb-0  font-semibold'>Explore</Link>
+
     </>
 
 
+    const manueBar2 = <>
+        <Link to="/" className='px-1  mb-2 md:mb-0 mr-2  text-lg'>Stays</Link>
+        <Link to="/" className='px-1  mr-2 mb-2 md:mb-0   text-lg'>Experiences</Link>
+        <Link to="/" className='px-1   mb-2 md:mb-0   text-lg'>Online Experiences</Link>
 
+
+    </>
 
 
     return (
 
-        <div className="navbar bg-base-100 shadow">
-            <div className="navbar-start">
-                <div className="dropdown">
-                    <label tabIndex={0} className="btn btn-ghost lg:hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
-                    </label>
-                    <ul tabIndex={0} className="menu menu-sm  dropdown-content mt-3 z-[1] p-2 text-center shadow bg-base-100 w-52">
-                        {manueBar}
+        <div className=' shadow-sm md:mx-3 md:py-2 '>
+            <div className="navbar">
+                <div className="navbar-start">
+                    <div className="dropdown">
+                        <label tabIndex={0} className="btn btn-ghost lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                        </label>
+                        <ul tabIndex={0} className="menu menu-sm  dropdown-content mt-3 z-[1] p-2 text-center shadow bg-base-100 w-52">
 
+                            {manueBar}
+
+                        </ul>
+                    </div>
+                    <div className='h-[34px] w-[100px]'>
+                        <img className='h-full w-full' src={logo} alt="" />
+                    </div>
+                </div>
+                <div onClick={handleShow} className="navbar-center hidden lg:flex">
+                    <ul className="menu menu-horizontal px-1">
+                        <div >
+                            {
+                                show && manueBar2
+                            }
+                            {
+                                !show &&
+                                <div className="hidden lg:flex justify-center items-center relative shadow-sm shadow-gray-300 border rounded-full ">
+                                    <input
+                                        type="search"
+                                        placeholder=""
+                                        className="py-2.5 w-[20rem] rounded-full outline-0"
+                                    />
+                                    <div className="flex justify-between absolute w-full pr-16 pl-6 font-semibold text-gray-600">
+                                        <button className="w-full">Place</button>
+                                        <button className="border-l border-x px-6">Time</button>
+                                        <button className="w-full text-gray-600/60 pl-2">Add guest</button>
+                                    </div>
+                                    <div className="bg-[#FF385C] p-2 rounded-full mr-2">
+                                        <FiSearch className="text-white w-full" />
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                        {/* {manueBar} */}
                     </ul>
                 </div>
-                <div className='h-[70px] w-40'>
-                    <img className='h-full w-full' src={logo} alt="" />
-                </div>
-            </div>
-            <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1">
+                <div className="navbar-end">
+
 
                     {manueBar}
-                </ul>
+
+
+                    {
+                        user?.email ?
+                            <button onClick={handleLogout} className='px-1 mr-2 pt-0 font-semibold'>Logout</button>
+                            :
+
+                            <Link to="/login" className='px-1 mr-2  font-semibold'>Login</Link>
+
+
+
+                    }
+
+
+
+                </div>
+
+
             </div>
-            <div className="navbar-end">
 
-                {
-                    user?.email ?
-                        <button onClick={handleLogout} className='px-1 mr-2 font-bold text-md'>Log Out</button>
-                        :
-
-                        <Link to="/login" className='px-1 mr-2 font-bold text-md'>LOGIN</Link>
-
-
-                }
-
-
-
-            </div>
+            {
+                show && <SearchBox></SearchBox>
+            }
         </div>
     );
 };

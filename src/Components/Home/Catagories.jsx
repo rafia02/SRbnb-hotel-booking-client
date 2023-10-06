@@ -12,7 +12,7 @@ import "react-multi-carousel/lib/styles.css";
 import { Link } from 'react-router-dom';
 import { context } from '../../Context/AuthContex';
 import Loader from '../Shared/Loader';
-
+import { LuFilter } from "react-icons/lu";
 
 
 
@@ -77,31 +77,33 @@ const Catagories = () => {
 
   return (
 
-    <div className='mx-6 '>
+    <div className='flex m-5'>
+            <div className='w-8/12  md:w-4/5'>
+                <Carousel responsive={responsive}>
+
+                    {
+                        catagories.map(e => <button className='focus:border-b-2 focus:border-gray-700 pb-2' onClick={() => handleCatagory(e.catagory)} key={e.catagory}> <div>
+                            <img className='h-7 ' src={e.img} alt="" />
+                            <p className='text-start text-sm pt-1'>{e.catagory}</p>
+                        </div></button>)
+                    }
 
 
-      <Carousel responsive={responsive}>
+                </Carousel>
+            </div>
 
-        {
-          catagories.map(e => <div onClick={() => handleCatagory(e.catagory)} key={e.catagory}> <div>
-            <img className='h-9 ' src={e.img} alt="" />
-            <p className='text-start text-sm pt-1'>{e.catagory}</p>
-          </div></div>)
-        }
-
-
-      </Carousel>
-
-
-
-
-
-
-
-
-
-
-    </div>
+            <div className='w-4/12 md:w-1/5 flex justify-end md:justify-between items-center  '>
+                <button  onClick={() => document.getElementById('my_modal_2').showModal()} className='flex  gap-2 items-center border border-gray-400 p-2 md:py-3 md:px-4 rounded-xl'>
+                    <LuFilter></LuFilter>
+                    {/* <button className="btn" >open modal</button> */}
+                    <p className='text-sm font-semibold'>Filters</p>
+                </button>
+                <button className='md:flex hidden gap-2 items-center border px-4 py-3 border-gray-400 rounded-xl'>
+                    <p className='text-sm font-semibold'>Total tax</p>
+                    <input type="checkbox" className="toggle toggle-sm" />
+                </button>
+            </div>
+        </div>
   );
 };
 

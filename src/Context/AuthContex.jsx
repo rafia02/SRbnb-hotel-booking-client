@@ -18,6 +18,23 @@ const AuthContex = ({ children }) => {
     const [rate, setRate] = useState(null)
 
 
+
+    // const [hotel, setHotel] = useState([])
+    const [showOut, setShowOut] = useState("")
+    const [showIn, setShowIn] = useState("")
+    const [adults, setAdults] = useState(0)
+    const [childrens, setChildren] = useState(0)
+    const [total, setTotal] = useState(0)
+    // const [country, setCountry] = useState("")
+    const [show, setShow] = useState(false)
+
+    const [minValue, setMinValue] = useState(0);
+    const [maxValue, setMaxValue] = useState(500);
+    const [beds, setBeds] = useState("");
+    const [rooms, setRooms] = useState("");
+    const [baths, setBaths] = useState("");
+
+
   
 
 
@@ -62,7 +79,7 @@ const AuthContex = ({ children }) => {
 
 
 
-    const authInfo = { rate, setRate, guest, setGuest, country, setCountry, user, logout, setHotel, hotel, signup, login, profileupdate  }
+    const authInfo = { rate, minValue, setMinValue, maxValue, setMaxValue, beds, setBeds, rooms, setRooms, baths, setBaths,  show, setShow, setHotel, country, setCountry, showOut, total, setTotal, childrens, setChildren, setShowOut, showIn, setShowIn, adults, setAdults, setRate, guest, setGuest, country, setCountry, user, logout, setHotel, hotel, signup, login, profileupdate  }
 
     return (
         <div>
