@@ -15,6 +15,7 @@ import Reviews from '../Reviews';
 
 
 
+
 const Home = () => {
     const center = { lat: 37.7749, lng: -122.4194 }; // Set the initial map center coordinates
     const zoom = 10; // Set the initial map zoom level
