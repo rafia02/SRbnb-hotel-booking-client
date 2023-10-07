@@ -29,8 +29,8 @@ const SignUp = () => {
 
 
     return (
-        <div className="min-h-screen flex items-center justify-center ">
-            <div className="bg-white p-8 border rounded shadow-md max-w-md w-full">
+        <div className=" mx-5 md:mx-0 mt-10 md:mt-14 flex justify-center ">
+            <div className="bg-white p-8 border rounded-xl shadow-md max-w-lg w-full">
                 <h2 className="text-2xl text-center font-bold mb-6">Sign Up</h2>
 
                 <form onSubmit={handleSubmit(handleSignup)}>
@@ -78,7 +78,7 @@ const SignUp = () => {
 
                     </div>
 
-                    <input type="submit" value="Sign Up" className=' text-white font-bold px-4 py-2 text-center w-full mb-3 bg-rose-600 rounded-lg  hover:bg-rose-700 duration-500' />
+                    <input type="submit" value="Sign Up" className=' text-white font-bold px-4 py-2 text-center w-full mb-3 bg-rose-500 rounded-full  hover:bg-rose-600 duration-500' />
 
                     {/* <div className='text-center w-full mb-3 bg-rose-600 rounded-lg  hover:bg-rose-700 duration-500'>
                         <button type="submit" className=" text-white font-bold px-4 py-2 ">Sign Up</button>

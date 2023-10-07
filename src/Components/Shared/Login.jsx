@@ -25,10 +25,10 @@ const Login = () => {
     }
 
     return (
-        <div className="min-h-screen flex items-center justify-center ">
-            <div className="bg-white p-8 border rounded shadow-md max-w-md w-full">
+        <div className=" mx-5 md:mx-0 mt-10 md:mt-14 flex justify-center ">
+            <div className=" bg-white  p-8 border rounded-xl shadow-md max-w-lg w-full">
                 <h2 className="text-2xl text-center font-semibold mb-4">Login</h2>
-                <form onSubmit={handleSubmit(handleLogin)}>
+                <form className='px-5' onSubmit={handleSubmit(handleLogin)}>
                     <div className="mb-4">
                         <label htmlFor="email" className="block text-gray-700">Email</label>
                         <input type="text"
@@ -48,13 +48,13 @@ const Login = () => {
                     </div>
 
 
-                    <input type="submit" value="Log in" className=' text-white font-bold px-4 py-2 text-center w-full mb-3 bg-rose-600 rounded-lg  hover:bg-rose-700 duration-500'/>
+                    <input type="submit" value="Log in" className='mt-4 text-white font-bold px-4 py-2 text-center w-full mb-3 bg-rose-500 rounded-full  hover:bg-rose-600 duration-500'/>
 
                 </form>
-                <div className='text-center mt-5 mb-3 w-full rounded-lg  hover:text-white outline bg-white hover:bg-rose-600 duration-500 '>
-                    <button type="submit" className=" font-bold px-4 py-2 ">Continue with google</button>
+                <div className='text-center mx-5 px-5 mt-5 mb-3 w-auto rounded-full hover:text-black outline  hover:bg-rose-100 duration-500 '>
+                    <button type="submit" className="text-sm md:text-md font-bold px-4 py-2 ">Continue with google</button>
                 </div>
-                <p>Don't have an account? Please <Link to="/signup" className='text-rose-700 font-bold'>Sing up</Link></p>
+                <p className='mx-5'>Don't have an account? Please <Link to="/signup" className='text-rose-700 font-bold'>Sing up</Link></p>
             </div>
         </div>
     );
