@@ -96,7 +96,7 @@ const FilterModal = () => {
                             {
                                 type.map(b =>
                                     <div
-                                        className={` py-2 px-5 rounded-2xl border-gray-500  border hover:border-gray-500 duration-500 cursor-pointer ${b.selected ? 'bg-black' : 'bg-white'}`}
+                                        className={` py-3 px-4 md:px-6 rounded-2xl border-gray-500  border hover:border-gray-500 duration-500 cursor-pointer ${b.selected ? 'bg-black' : 'bg-white'}`}
                                         onClick={() => togglehangle(b.id, setType)}
 
                                     >

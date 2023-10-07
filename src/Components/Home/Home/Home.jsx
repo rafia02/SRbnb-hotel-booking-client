@@ -35,22 +35,22 @@ const Home = () => {
                         <h1 className='my-4'> &</h1>
                         <h1> Enjoy Your holiday</h1>
                     </div>
-                    <SearchBox></SearchBox>
+                 
                 </div>
             </div> */}
             <FilterModal></FilterModal>
             <Catagories></Catagories>
             <Hotels></Hotels>
             <Inspiration></Inspiration>
-      
+
             <Gallery></Gallery>
             <Facilities></Facilities>
             {/* <Offers></Offers> */}
             <Extra></Extra>
             <Reviews></Reviews>
             <Subscribe></Subscribe>
-            
-            
+
+
 
 
 

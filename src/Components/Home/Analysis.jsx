@@ -1,6 +1,6 @@
 import React from 'react';
 import Lottie from "lottie-react";
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
+import { BarChart, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Bar, ResponsiveContainer } from 'recharts';
 import ana from "../../images/analisys.json"
 import { Question } from './Question';
 
@@ -16,29 +16,36 @@ const Analysis = () => {
         { name: 'May', visitor: 30 },
         { name: 'June', visitor: 40 },
         { name: 'July', visitor: 30 },
-        { name: 'August', visitor: 70 },
+        { name: 'August', visitor: 50 },
+        { name: 'September', visitor: 70 },
     ];
 
 
     return (
         <div>
-            <div className='flex flex-col md:flex-row justify-evenly items-center gap-5'>
-                <div className='w-full md:w-1/3'>
+            <div className='grid grid-cols-1 md:grid-cols-2 justify-evenly items-center md:gap-5'>
+                <div className='w-full'>
                     <Lottie animationData={ana}></Lottie>
 
                 </div>
-                <div className="w-full md:w-1/3">
-                    <h1 className="text-2xl font-semibold ml-10 mb-7">Total visitors analysic records</h1>
-                    <BarChart width={400} height={300} data={data}>
-                        <CartesianGrid strokeDasharray="3 3" />
-                        <XAxis dataKey="name" />
-                        <YAxis />
-                        <Tooltip />
-                        <Legend />
-                        <Bar dataKey="visitor" fill="#60A5FA" />
+                <div className="w-full">
+                    <h1 className="text-2xl font-semibold ml-7 mb-7">Total visitors analysic records</h1>
 
 
-                    </BarChart>
+                    <ResponsiveContainer width="100%" height={400}>
+                        <BarChart
+                            data={data}
+                            margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
+                        >
+                            <CartesianGrid strokeDasharray="3 3" />
+                            <XAxis dataKey="name" />
+                            <YAxis />
+                            <Tooltip />
+                            <Legend />
+                            <Bar dataKey="visitor" fill="#8884d8" />
+                        </BarChart>
+                    </ResponsiveContainer>
+
                 </div>
             </div>
             <div>

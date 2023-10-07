@@ -26,7 +26,7 @@ export const router = createBrowserRouter([
             { path: "/filter/hotel", loader: () => fetch(`https://room-booking-server.vercel.app/hotels`), element: <FilterPage></FilterPage> },
             { path: "/signup", element: <SignUp></SignUp> },
             { path: "/hotels", element: <AllHotelPage></AllHotelPage> },
-            { path: "/search/hotel", element: <SearchPage></SearchPage> },
+            { path: "/search/hotel", loader: () => fetch(`https://room-booking-server.vercel.app/hotels`), element: <SearchPage></SearchPage> },
             {path: "/analysis", element: <Analysis></Analysis>},
             {path: "/explore", element: <ExplorePage></ExplorePage>},
             {path: "/successPage", element: <Success></Success>}

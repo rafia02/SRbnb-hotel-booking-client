@@ -9,23 +9,23 @@ const auth = getAuth(app)
 
 
 const AuthContex = ({ children }) => {
-    const [hotel, setHotel] = useState([])
+    // const [hotel, setHotel] = useState([])
     const [user, setUser] = useState(null)
     const [loading, setLoadign] = useState(true)
 
-    const [country, setCountry] = useState("")
+    // const [country, setCountry] = useState("")
     const [guest, setGuest] = useState(null)
     const [rate, setRate] = useState(null)
 
 
 
-    // const [hotel, setHotel] = useState([])
+    const [hotel, setHotel] = useState([])
     const [showOut, setShowOut] = useState("")
     const [showIn, setShowIn] = useState("")
     const [adults, setAdults] = useState(0)
     const [childrens, setChildren] = useState(0)
     const [total, setTotal] = useState(0)
-    // const [country, setCountry] = useState("")
+    const [country, setCountry] = useState("")
     const [show, setShow] = useState(false)
 
     const [minValue, setMinValue] = useState(0);

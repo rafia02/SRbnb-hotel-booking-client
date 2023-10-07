@@ -2,9 +2,9 @@ import React from 'react'
 
 export const Question = () => {
     return (
-        <div  className='grid bg-gray-50 p-10 grid-cols-2 gap-10 mt-20'>
+        <div  className='grid bg-gray-50 p-10 grid-cols-1 md:grid-cols-2 gap-10 mt-10 md:mt-20'>
 
-            <h2 className="text-4xl text-center font-bold italic font-sans mt-5">All Your Questions and Answers About <span className='text-rose-500'>SRBNB</span> </h2>
+            <h2 className=" text-xl md:text-4xl text-center font-bold italic font-sans mt-5">All Your Questions and Answers About <span className='text-rose-500'>SRBNB</span> </h2>
 
             <div>
                 <div tabIndex={0} className="collapse collapse-arrow border border-base-300 bg-base-200">
