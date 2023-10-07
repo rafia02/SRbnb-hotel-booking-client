@@ -37,7 +37,7 @@ const AllHotelPage = () => {
         <div className='mx-6'>
 
 
-            <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 gap-y-14 my-16'>
+            <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 gap-y-14 my-8 md:my-16'>
                 {
                     currentProducts?.map(htl => <SingleHotel
                         key={htl._id}

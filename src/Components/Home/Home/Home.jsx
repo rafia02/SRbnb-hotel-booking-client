@@ -23,21 +23,9 @@ const Home = () => {
 
 
     return (
-        <div className='pt-7'>
-
-            {/* <div>
-                <video className='relative mb-10 ' autoPlay loop muted src={vdo}></video>
+        <div className=' pt-5 md:pt-7'>
 
 
-                <div className='md:absolute  md:top-1/2 ml-5 md:ml-20'>
-                    <div className='hidden md:block text-white text-center mb-10 text-4xl font-bold font-serif italic'>
-                        <h1>Explore Deffierent Country</h1>
-                        <h1 className='my-4'> &</h1>
-                        <h1> Enjoy Your holiday</h1>
-                    </div>
-                 
-                </div>
-            </div> */}
             <FilterModal></FilterModal>
             <Catagories></Catagories>
             <Hotels></Hotels>
@@ -48,8 +36,21 @@ const Home = () => {
             {/* <Offers></Offers> */}
             <Extra></Extra>
             <Reviews></Reviews>
-            <Subscribe></Subscribe>
 
+            <div className='relative mt-20'>
+                <video autoPlay loop muted src={vdo}></video>
+
+                <div className='text-center  flex flex-col justify-center items-center'>
+                    <div className='absolute text-white top-1/3 text-center text-sm md:text-5xl font-bold font-serif italic'>
+                        <h1>Explore Deffierent Country</h1>
+                        <h1 className='my-1 md:my-4'> &</h1>
+                        <h1> Enjoy Your holiday</h1>
+                    </div>
+
+                </div>
+            </div>
+
+            <Subscribe></Subscribe>
 
 
 
