@@ -35,7 +35,7 @@ const SearchPage = () => {
                         }
                     </div>
                     :
-                    <h4 className='text-2xl md:text-4xl text-center mt-10 font-bold '>No Found Any Hotel In This Place</h4>
+                    <h4 className='text-2xl md:text-3xl text-center mt-16 font-bold '>No Found Any Hotel In This Place</h4>
             }
 
         </div>

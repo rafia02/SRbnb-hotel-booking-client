@@ -52,7 +52,7 @@ const Catagories = () => {
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 3000 },
-      items: 10
+      items: 9
     },
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -83,8 +83,8 @@ const Catagories = () => {
 
                     {
                         catagories.map(e => <button className='focus:border-b-2 focus:border-gray-700 pb-2' onClick={() => handleCatagory(e.catagory)} key={e.catagory}> <div>
-                            <img className='h-7 ' src={e.img} alt="" />
-                            <p className='text-start text-sm pt-1'>{e.catagory}</p>
+                            <img className='h-6 ' src={e.img} alt="" />
+                            <p className='text-start text-xs pt-1'>{e.catagory}</p>
                         </div></button>)
                     }
 

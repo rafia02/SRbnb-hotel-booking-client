@@ -119,7 +119,7 @@ const totalGuest = adults + childrens
                             </div>
 
                             <button type='submit' className='pr-3'>
-                                <BiSearch className="text-white  w-10 h-10 rounded-full p-2 font-extrabold text-center   bg-[#FF385C] text-5xl "></BiSearch>
+                                <BiSearch className="text-white  w-10 h-10 rounded-full p-2 font-extrabold text-center bg-[#ea8980]  text-5xl "></BiSearch>
                             </button>
                             
 

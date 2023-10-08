@@ -82,7 +82,7 @@ const Navber = () => {
                                             <button className="border-l border-x px-6">Time</button>
                                             <button className="w-full text-gray-600/60 pl-2">Add guest</button>
                                         </div>
-                                        <div className="bg-[#FF385C] p-2 rounded-full mr-2">
+                                        <div className="bg-[#ee847a] hover:cursor-pointer p-2 rounded-full mr-2">
                                             <FiSearch className="text-white w-full" />
                                         </div>
                                     </div>

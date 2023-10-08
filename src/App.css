@@ -1,8 +1,8 @@
-/* #root {
-  max-width: 1280px;
-  margin: 0 auto;
+#root {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
 
-} */
+}
 
 .items {
   animation: kochu 4s linear infinite;

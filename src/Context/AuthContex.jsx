@@ -38,7 +38,7 @@ const AuthContex = ({ children }) => {
   
 
 
-    useEffect((id = "National parks") => {
+    useEffect((id = "Rooms") => {
         fetch(`https://room-booking-server.vercel.app/hotels/${id}`)
             .then(res => res.json())
             .then(data => setHotel(data))
