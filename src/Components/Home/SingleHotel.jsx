@@ -22,7 +22,7 @@ const SingleHotel = ({ htl }) => {
                 </div>
 
                 <div>
-                    <div className='flex items-center justify-between mt-3'>
+                    <div className='flex items-center text-[15px] justify-between mt-3'>
                         <div className='flex '>
                             <h4 className="font-bold">{pleace.distric},</h4>
                             <h4 className="font-bold">{pleace.country}</h4>
@@ -32,8 +32,8 @@ const SingleHotel = ({ htl }) => {
                             <span className=''>{reviews}</span>
                         </div>
                     </div>
-                    <p className='my-1'>{distance}</p>
-                    <p className='text-sm'>{catagory}</p>
+                    <p className='mb-[1px] text-opacity-70 text-black text-sm'>{distance}</p>
+                    <p className='text-xs  text-opacity-70 text-black mb-1'>{catagory}</p>
                     <p><span className='font-bold'>${price}</span> night</p>
                 </div>
             </div>

@@ -4,7 +4,7 @@ import { context } from '../Context/AuthContex'
 import SingleHotel from './Home/SingleHotel'
 
 const FilterPage = () => {
-    const { minValue, maxValue, beds, rooms, baths } = useContext(context)
+  const { minValue, maxValue, beds, rooms, baths } = useContext(context)
   const data = useLoaderData()
   const filterData = data?.filter(d => d.room.bedroom >= rooms && d.price >= minValue && d.price <= maxValue && d.room.bed >= beds && d.room.bath >= baths)
 
@@ -29,8 +29,8 @@ const FilterPage = () => {
           </div>
           :
           <div className='h-40 md:h-60'>
-                        <h4 className='text-2xl  md:text-3xl text-center mt-16 md:mt-40 font-bold '>No Found Any Hotel</h4>
-                    </div>
+            <h4 className='text-2xl  md:text-3xl text-center mt-16 md:mt-40 font-bold '>No Found Any Hotel </h4>
+          </div>
       }
 
     </div>
