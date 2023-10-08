@@ -9,7 +9,7 @@ const Inspiration = () => {
         <div className='mt-28  mx-6'> 
             <h1 className='text-2xl font-bold my-5'>Get Inspiration For Your Next Trip</h1>
 
-            <motion.div initial= {{opacity: 0, x: 200}} whileInView={{opacity: 1, x: 1}} transition={{duration: 1.5}} className='grid grid-cols-1 gap-4 md:grid-cols-2  overlay'>
+            <motion.div initial= {{opacity: 0, x: -200}} whileInView={{opacity: 1, x: 1}} transition={{duration: 1.5}} className='grid grid-cols-1 gap-4 md:grid-cols-2  overlay'>
                 <div className="relative rounded-xl  overflow-hidden">
                     <img
                         src="https://www.travoh.com/wp-content/uploads/2021/11/001-InterContinental-Hayman-Island-Resort-Whitsunday-Islands-Australia.jpg"
@@ -17,9 +17,9 @@ const Inspiration = () => {
                         className=" w-full h-auto transition-transform duration-300 transform-gpu hover:scale-105   "
                     />
 
-                    <div className='absolute bottom-5 p-3 text-white'>
-                        <h2 className='font-bold text-2xl'>6 unforgettable holiday homes in Australia</h2>
-                        <p className='font-bold mt-1'>From modern architectural marvels to classic Byron Bay beach homes.</p>
+                    <div className='text-opacity-80 absolute bottom-5 p-3 text-white'>
+                        <h2 className='font-semibold text-xl md:text-2xl'>6 unforgettable holiday homes in Australia</h2>
+                        <p className=' mt-1'>From modern architectural marvels to classic Byron Bay beach homes.</p>
                     </div>
                 </div>
 

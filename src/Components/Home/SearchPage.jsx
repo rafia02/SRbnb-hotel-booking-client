@@ -6,23 +6,23 @@ import { useLoaderData } from 'react-router-dom';
 
 const SearchPage = () => {
     const data = useLoaderData()
-    const {  total, country } = useContext(context)
+    const { total, country } = useContext(context)
 
     console.log(total, country)
 
-    if(!total && !country){
+    if (!total && !country) {
         <Loader></Loader>
     }
 
 
     const filterData = data?.filter(d => d.room.guest >= total && country === d.pleace.country)
-    
 
-    
+
+
 
     return (
 
-        <div>
+        <div className=''>
 
             {
                 filterData.length ?
@@ -35,7 +35,9 @@ const SearchPage = () => {
                         }
                     </div>
                     :
-                    <h4 className='text-2xl md:text-3xl text-center mt-16 font-bold '>No Found Any Hotel In This Place</h4>
+                    <div className='h-40 md:h-60'>
+                        <h4 className='text-2xl  md:text-3xl text-center mt-16 md:mt-40 font-bold '>No Found Any Hotel In This Place</h4>
+                    </div>
             }
 
         </div>

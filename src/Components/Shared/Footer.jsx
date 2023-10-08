@@ -5,7 +5,7 @@ const Footer = () => {
   return (
 
 
-      <div className=' py-8 bg-[#032340] px-10'>
+      <div className='max-h-screen py-8 bg-[#032340] px-10'>
         <footer className="footer flex  md:flex-row justify-between   text-white ">
           <div>
             <span className="footer-title">Services</span>

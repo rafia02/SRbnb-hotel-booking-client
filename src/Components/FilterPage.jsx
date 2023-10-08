@@ -28,7 +28,9 @@ const FilterPage = () => {
 
           </div>
           :
-          <h4 className='text-2xl md:text-4xl text-center mt-10 font-bold '>No Found Any Hotel In This Place</h4>
+          <div className='h-40 md:h-60'>
+                        <h4 className='text-2xl  md:text-3xl text-center mt-16 md:mt-40 font-bold '>No Found Any Hotel</h4>
+                    </div>
       }
 
     </div>

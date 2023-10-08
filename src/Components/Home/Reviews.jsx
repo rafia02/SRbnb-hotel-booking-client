@@ -17,7 +17,7 @@ const Reviews = () => {
 
     return (
         <div className='mt-28'>
-            <h1 className="text-4xl my-16 text-center italic font-bold"> Top Client Reviews</h1>
+            <h1 className="text-3xl md:text-4xl  my-16 text-center textStyle font-thin"> Top Client Reviews</h1>
             <div class="my-carousel  relative">
                 {
                     datas.map(d => <div className=' bg-gray-100 rounded mr-16 h-72 w-80 border  '>
@@ -27,8 +27,8 @@ const Reviews = () => {
 
                         <div className='px-5'>
                             <div className='flex my-2 items-center justify-between'>
-                                <h2 className="font-bold italic  text-xl">{d.name}</h2>
-                                <div className='flex text-amber-500'>
+                                <h2 className=" textStyle text-[18px]">{d.name}</h2>
+                                <div className='flex text-xs text-amber-500'>
                                     <BsStarFill></BsStarFill>
                                     <BsStarFill></BsStarFill>
                                     <BsStarFill></BsStarFill>
@@ -41,7 +41,7 @@ const Reviews = () => {
                                 <h1 className='text-4xl mt-2 font-bold'>**</h1>
                                 <hr className='border-2 w-1/2 border-black' />
                             </div>
-                            <p className='italic'>{d.review}</p>
+                            <p className='italic text-[13px]'>{d.review}</p>
                         </div>
 
                     </div>)

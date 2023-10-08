@@ -51,7 +51,7 @@ const Facilities = () => {
     ]
     return (
         <div className='relative mt-20 mx-6 '>
-            <h1 className='text-4xl font-bold text-center'>Hotel Facilities</h1>
+            <h1 className='text-2xl md:text-4xl font-bold text-center'>Hotel Facilities</h1>
             <hr  className='w-1/12 border-2 border-amber-600 mt-5 mb-10 mx-auto'/>
             <motion.div initial= {{opacity: 0, y: -200}} whileInView={{opacity: 1, y: 1}} transition={{duration: 0.9}}  className='grid top-0 gap-x-5 gap-y-16 grid-cols-1 md:grid-cols-3'>
                 {

@@ -43,7 +43,7 @@ const Subscribe = () => {
                 </div>
                 <form onSubmit={handleSubscrib} className='text-center mt-5 '>
                     <input name='email' className='p-3 w-56 text-black md:w-80 md:mb-0 mb-5  rounded' placeholder='Your Email Address' type="email" required />
-                    <input className=' ml-2 font-bold duration-500 bg-[#BF7069] hover:cursor-pointer text-white  hover:bg-opacity-80 py-1 md:p-3 px-6 md:px-14 rounded' value="Subscribe" type="submit" />
+                    <input className=' ml-2 font-bold duration-500 bg-[#BF7069] hover:cursor-pointer text-white  hover:bg-opacity-80 py-3 px-6 md:px-14 rounded' value="Subscribe" type="submit" />
                 </form>
             </div>
 

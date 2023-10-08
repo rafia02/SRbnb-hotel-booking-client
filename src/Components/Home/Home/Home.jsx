@@ -23,7 +23,7 @@ const Home = () => {
 
 
     return (
-        <div className=' pt-5 md:pt-7'>
+        <div className=' mt-5 md:mt-7'>
 
 
             <FilterModal></FilterModal>
@@ -41,7 +41,7 @@ const Home = () => {
                 <video autoPlay loop muted src={vdo}></video>
 
                 <div className='text-center  flex flex-col justify-center items-center'>
-                    <div className='absolute text-white top-1/3 text-center text-sm md:text-5xl font-bold font-serif italic'>
+                    <div className='absolute textStyle text-white top-1/3 text-center text-opacity-80 text-sm md:text-5xl'>
                         <h1>Explore Deffierent Country</h1>
                         <h1 className='my-1 md:my-4'> &</h1>
                         <h1> Enjoy Your holiday</h1>

@@ -27,8 +27,8 @@ const Navber = () => {
 
 
     const manueBar = <>
-        <Link to="/" className='px-1 mb-2 md:mb-0 mr-2 font-semibold'>Home</Link>
-        <Link to="/hotels" className='px-1  mr-2 mb-2 md:mb-0  font-semibold'>Hotels</Link>
+        <Link to="/" className='px-1 hover:text-[#c45045] duration-300 mb-2 md:mb-0 mr-2 font-semibold'>Home</Link>
+        <Link to="/hotels" className='px-1 hover:text-[#c45045] duration-300 mr-2 mb-2 md:mb-0  font-semibold'>Hotels</Link>
         {/* <Link to="/analysis" className='px-1  mr-2 mb-2 md:mb-0  font-semibold'>Faq</Link> */}
         {/* <Link to="/explore" className='px-1  mr-2 mb-2 md:mb-0  font-semibold'>Explore</Link> */}
 
@@ -36,8 +36,8 @@ const Navber = () => {
 
 
     const manueBar2 = <>
-        <Link to="/analysis" className='px-1  mb-2 md:mb-0 mr-2  text-lg'>Faq</Link>
-        <Link to="/explore" className='px-1   mb-2 md:mb-0   text-lg'>Explore</Link>
+        <Link to="/analysis" className='px-1 hover:text-[#c45045] duration-300 mb-2 md:mb-0 mr-2  text-lg'>Faq</Link>
+        <Link to="/explore" className='px-1 hover:text-[#c45045] duration-300 mb-2 md:mb-0   text-lg'>Explore</Link>
 
 
     </>
@@ -100,10 +100,10 @@ const Navber = () => {
 
                     {
                         user?.email ?
-                            <button onClick={handleLogout} className='px-1  mr-2 mb-2 md:mb-0  font-semibold'>Logout</button>
+                            <button onClick={handleLogout} className='px-1 hover:text-[#c45045] duration-300  mr-2 mb-2 md:mb-0  font-semibold'>Logout</button>
                             :
 
-                            <Link to="/login" className='px-1  mr-2 mb-2 md:mb-0  font-semibold'>Login</Link>
+                            <Link to="/login" className='px-1 hover:text-[#c45045] duration-300  mr-2 mb-2 md:mb-0  font-semibold'>Login</Link>
 
 
 

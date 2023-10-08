@@ -22,7 +22,7 @@ const Gallery = () => {
     ]
     return (
         <div className='my-20 mx-6'>
-            <h1 className='text-4xl mb-7 font-bold text-center'>Gallery</h1>
+            <h1 className='text-2xl md:text-4xl mb-7 font-bold text-center'>Gallery</h1>
             <motion.div initial= {{opacity: 0, y: -200}} whileInView={{opacity: 1, y: 1}} transition={{duration: 1.5}} className='flex flex-col md:flex-row gap-5 md:gap-7'>
                 <div className='w-full md:w-8/12'>
                     <div className='grid grid-cols-1 gap-5 md:grid-cols-2'>

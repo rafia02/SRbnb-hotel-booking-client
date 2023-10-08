@@ -403,7 +403,7 @@ const HotelDetails = () => {
 
                                     <Link to="/login"
                                         type="submit"
-                                        className="mt-4 px-4 text-center py-2 w-full outline-none text-white font-bold bg-rose-600  rounded-md hover:bg-rose-700"
+                                        className="mt-4 px-4 text-center py-2 w-full outline-none text-white font-bold bg-[#ff7265] rounded-md duration-300  hover:bg-[#f76557]"
                                     >
                                         Reserve
                                     </Link>
