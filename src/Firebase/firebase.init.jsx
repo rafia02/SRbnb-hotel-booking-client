@@ -2,12 +2,12 @@
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDaENwixcgJcItwX-JgGerKNRP0DzsuaKE",
-  authDomain: "srbnb-hotel-booking.firebaseapp.com" ,
-  projectId: "srbnb-hotel-booking" ,
-  storageBucket: "srbnb-hotel-booking.appspot.com" ,
-  messagingSenderId: "527530646792" ,
-  appId: "1:527530646792:web:1e9ae7e85e3085af2ce0bd" ,
+  apiKey: "AIzaSyAsRWY0rBZQoHhnXG_xSmD9eptryzO9RO0",
+  authDomain: "srbnb-hotel-booking-5b5ba.firebaseapp.com",
+  projectId: "srbnb-hotel-booking-5b5ba",
+  storageBucket: "srbnb-hotel-booking-5b5ba.appspot.com",
+  messagingSenderId: "815390779867",
+  appId: "1:815390779867:web:f641fa81b21b2febfedffe"
 };
 
 
